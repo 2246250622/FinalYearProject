@@ -99,7 +99,7 @@
   ><i class="fab fa-pinterest"></i
 ></a>
 
-<!-- Vkontakte -->
+<!-- Vkontakte -->.
 <a class="btn btn-primary btn-lg btn-floating" style="background-color: #4c75a3;" href="#!" role="button"
   ><i class="fab fa-vk"></i
 ></a>
