@@ -93,7 +93,7 @@
 <a class="btn btn-primary btn-lg btn-floating" style="background-color: #0082ca;" href="#!" role="button"
   ><i class="fab fa-linkedin-in"></i
 ></a>
-123
+
 <!-- Pinterest -->
 <a class="btn btn-primary btn-lg btn-floating" style="background-color: #c61118;" href="#!" role="button"
   ><i class="fab fa-pinterest"></i
