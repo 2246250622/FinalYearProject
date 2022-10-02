@@ -6,6 +6,8 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.101.0">
+
+  
     <title>Product example · Bootstrap v5.2</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/product/">
@@ -76,101 +78,106 @@
     
     <!-- Custom styles for this template -->
     <link href="product.css" rel="stylesheet">
+
+    <style>
+.background {
+  background-image: url('../img/posterbg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+</style>
+
   </head>
   <body>
 
-<?php
+<?php 
 include('../Component/Navbar.php');
 ?>
 
 
+<div class="background">
+<br><br><br><br>
+<p class="text-center fs-1">CareHK</p>
+<p class="text-center fs-1">Small word. Huge impact.</p>
+<p class="text-center fs-1">💎</p>
+<br> &nbsp; <br> &nbsp; <br>   
+<p class="text-center fs-1">There are the <strong>numbers…</strong></p>
+<div class="container">
 
-<main>
-  <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
-    <div class="col-md-5 p-lg-5 mx-auto my-5">
-      <h1 class="display-4 fw-normal">Punny headline</h1>
-      <p class="lead fw-normal">And an even wittier subheading to boot. Jumpstart your marketing efforts with this example based on Apple’s marketing pages.</p>
-      <a class="btn btn-outline-secondary" href="#">Coming soon</a>
-    </div>
-    <div class="product-device shadow-sm d-none d-md-block"></div>
-    <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
+  <div class="row">
+    <div class="col-sm"><strong>$340 billion</strong><br>
+is spent annually on care.</div>
+    <div class="col-sm"><strong>10,000 people</strong><br>
+turn 65 every day.</div>
+    <div class="col-sm"><strong>80% of brain development</strong><br>
+occurs from the ages of zero-four. It’s when quality childcare is absolutely critical.</div>
+    <div class="col-sm"><strong>50% of families</strong><br>
+in the USA live in a childcare desert.</div>
   </div>
+</div>
 
-  <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
-    <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-      <div class="my-3 py-3">
-        <h2 class="display-5">Another headline</h2>
-        <p class="lead">And an even wittier subheading.</p>
-      </div>
-      <div class="bg-light shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
-    </div>
-    <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-      <div class="my-3 p-3">
-        <h2 class="display-5">Another headline</h2>
-        <p class="lead">And an even wittier subheading.</p>
-      </div>
-      <div class="bg-dark shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
-    </div>
+<p class="text-center fs-1">💎</p>
+<br> &nbsp; <br> &nbsp; <br>   
+<p class="text-center fs-1">There’s the <strong>reality</strong> we all live with…</p>
+
+<center>
+<div class="row">
+
+<div class="col-sm">
+<figure class="wp-block-image size-large"><img width="377" height="377" loading="lazy" src="./Company Overview - Care.com Company Overview_files/Gardening-1.png.webp" alt="" class="wp-image-1990" srcset="https://www.care.com/about/wp-content/uploads/sites/4/2021/12/Gardening-1.png.webp 424w, https://www.care.com/about/wp-content/uploads/sites/4/2021/12/Gardening-1-300x267.png.webp 300w"></figure>
+<p id="h-340billionis-spent-annually-on-care">Care is a personal matter but a universal concern.</p>
+</div>
+
+<div class="col-sm">
+<figure class="wp-block-image size-large"><img width="377" height="377" loading="lazy" src="./Company Overview - Care.com Company Overview_files/Woman-with-Stroller-1.png.webp" alt="" class="wp-image-1991" srcset="https://www.care.com/about/wp-content/uploads/sites/4/2021/12/Woman-with-Stroller-1.png.webp 424w, https://www.care.com/about/wp-content/uploads/sites/4/2021/12/Woman-with-Stroller-1-300x267.png.webp 300w"></figure>
+<p>Care disproportionately impacts women so access to care <br>promotes gender equity and stimulates economic growth.</p>
+</div>
+</div>
+
+
+
+<div class="row">
+<div class="col-sm">
+<figure class="wp-block-image size-large"><img width="377" height="377" loading="lazy" src="./Company Overview - Care.com Company Overview_files/Senior-Couple-1.png.webp" alt="" class="wp-image-1992" srcset="https://www.care.com/about/wp-content/uploads/sites/4/2021/12/Senior-Couple-1.png.webp 424w, https://www.care.com/about/wp-content/uploads/sites/4/2021/12/Senior-Couple-1-300x267.png.webp 300w"></figure>
+<p>Every single person will need and/or provide care to <br>someone in their lifetime, probably more than once.</p>
+</div>
+
+<div class="col-sm">
+<figure class="wp-block-image size-large"><img width="377" height="377" loading="lazy" src="./Company Overview - Care.com Company Overview_files/Newsletter-1.png.webp" alt="" class="wp-image-1993" srcset="https://www.care.com/about/wp-content/uploads/sites/4/2021/12/Newsletter-1.png.webp 424w, https://www.care.com/about/wp-content/uploads/sites/4/2021/12/Newsletter-1-300x267.png.webp 300w"></figure>
+<p>When people have care, they can work.<br>When people work, everyone wins.</p>
+</div>
+</div>
+</center>
+<br> &nbsp; <br> &nbsp; <br>   
+<div class="card" style="width: 50rem; margin: 0px auto;">
+  <div class="card-body">
+    
+
+<h3><blockquote class="wp-block-quote has-text-align-center is-style-large overview-quote" style="text-align:center;"><p>And then there’s <strong>Care.com…</strong></p></blockquote></h3>
+
+
+
+<p><strong>Our purpose is to help every family at each stage of care and today, we’re helping millions of families at home and at work across 17+ countries and growing.</strong></p>
+
+
+
+<ul class="is-style-heart-icon-list"><li>We’re using technology and innovation to solve one of the greatest human challenges.</li><li>We’re at the forefront of safety, advocacy and thought leadership.</li><li>We’re obsessively attuned to our customers’ needs because we ARE our customer.</li><li>We’re devoted to families of all types and backgrounds because we ARE families of all types and backgrounds.</li><li>We’re here for all your life, for all families, for all the reasons that matter.</li></ul>
+</div></div>
+<br> &nbsp; <br> &nbsp; <br>   
+<center><h1><blockquote class="wp-block-quote has-text-align-center is-style-large overview-quote"><p><strong>Care</strong> for all you <strong>love.</strong></p><p></p></blockquote></h1></center>
+<br> &nbsp; <br> &nbsp; <br>   
+</div></div>
+
+</div></div>
+</div></div>
+
   </div>
+</div>
 
-  <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
-    <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-      <div class="my-3 p-3">
-        <h2 class="display-5">Another headline</h2>
-        <p class="lead">And an even wittier subheading.</p>
-      </div>
-      <div class="bg-dark shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
     </div>
-    <div class="text-bg-primary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-      <div class="my-3 py-3">
-        <h2 class="display-5">Another headline</h2>
-        <p class="lead">And an even wittier subheading.</p>
-      </div>
-      <div class="bg-light shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
-    </div>
-  </div>
 
-  <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
-    <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-      <div class="my-3 p-3">
-        <h2 class="display-5">Another headline</h2>
-        <p class="lead">And an even wittier subheading.</p>
-      </div>
-      <div class="bg-body shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
-    </div>
-    <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-      <div class="my-3 py-3">
-        <h2 class="display-5">Another headline</h2>
-        <p class="lead">And an even wittier subheading.</p>
-      </div>
-      <div class="bg-body shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
-    </div>
-  </div>
-
-  <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
-    <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-      <div class="my-3 p-3">
-        <h2 class="display-5">Another headline</h2>
-        <p class="lead">And an even wittier subheading.</p>
-      </div>
-      <div class="bg-body shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
-    </div>
-    <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-      <div class="my-3 py-3">
-        <h2 class="display-5">Another headline</h2>
-        <p class="lead">And an even wittier subheading.</p>
-      </div>
-      <div class="bg-body shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
-    </div>
-  </div>
-</main>
-
-
-
-<?php
+  </body>
+  <?php
 include('../Component/Footer.php');
 ?>
-
-      
-  </body>
 </html>

@@ -41,7 +41,7 @@
     <div class="col-6 col-md">
       <h5>About CareHK</h5>
       <ul class="list-unstyled text-small">
-        <li><a class="link-secondary" href="#">About us</a></li>
+        <li><a class="link-secondary" href="../Layout/aboutus.php">About us</a></li>
         <li><a class="link-secondary" href="#">Careers</a></li>
         <li><a class="link-secondary" href="#">Terms of use</a></li>
         <li><a class="link-secondary" href="#">Privacy policy</a></li>
