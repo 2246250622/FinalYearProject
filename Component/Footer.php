@@ -41,101 +41,36 @@
     <div class="col-6 col-md">
       <h5>About CareHK</h5>
       <ul class="list-unstyled text-small">
-        <li><a class="link-secondary" href="#">Cool stuff</a></li>
-        <li><a class="link-secondary" href="#">Random feature</a></li>
-        <li><a class="link-secondary" href="#">Team feature</a></li>
-        <li><a class="link-secondary" href="#">Stuff for developers</a></li>
-        <li><a class="link-secondary" href="#">Another one</a></li>
-        <li><a class="link-secondary" href="#">Last time</a></li>
+        <li><a class="link-secondary" href="#">About us</a></li>
+        <li><a class="link-secondary" href="#">Careers</a></li>
+        <li><a class="link-secondary" href="#">Terms of use</a></li>
+        <li><a class="link-secondary" href="#">Privacy policy</a></li>
       </ul>
     </div>
     <div class="col-6 col-md">
       <h5>Get help</h5>
       <ul class="list-unstyled text-small">
-        <li><a class="link-secondary" href="#">Resource name</a></li>
-        <li><a class="link-secondary" href="#">Resource</a></li>
-        <li><a class="link-secondary" href="#">Another resource</a></li>
-        <li><a class="link-secondary" href="#">Final resource</a></li>
+        <li><a class="link-secondary" href="#">Articles & Guides</a></li>
+        <li><a class="link-secondary" href="#">Contact Us</a></li>
       </ul>
     </div>
     <div class="col-6 col-md">
       <h5>Discover</h5>
       <ul class="list-unstyled text-small">
-        <li><a class="link-secondary" href="#">Business</a></li>
-        <li><a class="link-secondary" href="#">Education</a></li>
-        <li><a class="link-secondary" href="#">Government</a></li>
-        <li><a class="link-secondary" href="#">Gaming</a></li>
+        <li><a class="link-secondary" href="#">Register is Normal User</a></li>
+        <li><a class="link-secondary" href="#">Become a caretaker</a></li>
+        <li><a class="link-secondary" href="#">COVID resources</a></li>
       </ul>
     </div>
     <div class="col-6 col-md">
-      <h5>About</h5>
-<!-- Facebook -->
-<a class="btn btn-primary btn-lg btn-floating" style="background-color: #3b5998;" href="#!" role="button"
-  ><i class="fab fa-facebook-f"></i
-></a>
-
-<!-- Twitter -->
-<a class="btn btn-primary btn-lg btn-floating" style="background-color: #55acee;" href="#!" role="button"
-  ><i class="fab fa-twitter"></i
-></a>
-
-<!-- Google -->
-<a class="btn btn-primary btn-lg btn-floating" style="background-color: #dd4b39;" href="#!" role="button"
-  ><i class="fab fa-google"></i
-></a>
-
-<!-- Instagram -->
-<a class="btn btn-primary btn-lg btn-floating" style="background-color: #ac2bac;" href="#!" role="button"
-  ><i class="fab fa-instagram"></i
-></a>
-
-<!-- Linkedin -->
-<a class="btn btn-primary btn-lg btn-floating" style="background-color: #0082ca;" href="#!" role="button"
-  ><i class="fab fa-linkedin-in"></i
-></a>
-
-<!-- Pinterest -->
-<a class="btn btn-primary btn-lg btn-floating" style="background-color: #c61118;" href="#!" role="button"
-  ><i class="fab fa-pinterest"></i
-></a>
-
-<!-- Vkontakte -->
-<a class="btn btn-primary btn-lg btn-floating" style="background-color: #4c75a3;" href="#!" role="button"
-  ><i class="fab fa-vk"></i
-></a>
-
-<!-- Stack overflow -->
-<a class="btn btn-primary btn-lg btn-floating" style="background-color: #ffac44;" href="#!" role="button"
-  ><i class="fab fa-stack-overflow"></i
-></a>
-
-<!-- Youtube -->
-<a class="btn btn-primary btn-lg btn-floating" style="background-color: #ed302f;" href="#!" role="button"
-  ><i class="fab fa-youtube"></i
-></a>
-
-<!-- Slack -->
-<a class="btn btn-primary btn-lg btn-floating" style="background-color: #481449;" href="#!" role="button"
-  ><i class="fab fa-slack-hash"></i
-></a>
-
+      <h5>Social media</h5>
 <!-- Github -->
-<a class="btn btn-primary btn-lg btn-floating" style="background-color: #333333;" href="#!" role="button"
+<a class="btn btn-primary btn-lg btn-floating" style="background-color: #333333;" href="https://github.com/2246250622/FinalYearProject" role="button"
   ><i class="fab fa-github"></i
 ></a>
 
-<!-- Dribbble -->
-<a class="btn btn-primary btn-lg btn-floating" style="background-color: #ec4a89;" href="#!" role="button"
-  ><i class="fab fa-dribbble"></i
-></a>
-
-<!-- Reddit -->
-<a class="btn btn-primary btn-lg btn-floating" style="background-color: #ff4500;" href="#!" role="button"
-  ><i class="fab fa-reddit-alien"></i
-></a>
-
 <!-- Whatsapp -->
-<a class="btn btn-primary btn-lg btn-floating" style="background-color: #25d366;" href="#!" role="button"
+<a class="btn btn-primary btn-lg btn-floating" style="background-color: #25d366;" href="https://wa.me/85267499270" role="button"
   ><i class="fab fa-whatsapp"></i
 ></a>
     </div>
