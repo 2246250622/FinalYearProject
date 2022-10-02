@@ -150,7 +150,7 @@ in the USA live in a childcare desert.</div>
 </center>
 <br> &nbsp; <br> &nbsp; <br>   
 <div class="card" style="width: 50rem; margin: 0px auto;">
-  <div class="card-body">
+  <div class="card-body  bg-danger text-white">
     
 
 <h3><blockquote class="wp-block-quote has-text-align-center is-style-large overview-quote" style="text-align:center;"><p>And then there’s <strong>Care.com…</strong></p></blockquote></h3>

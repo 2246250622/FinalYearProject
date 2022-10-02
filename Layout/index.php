@@ -75,7 +75,7 @@
 
     
     <!-- Custom styles for this template -->
-    <link href="product.css" rel="stylesheet">
+    <link href="../css/product.css" rel="stylesheet">
   </head>
   <body>
 

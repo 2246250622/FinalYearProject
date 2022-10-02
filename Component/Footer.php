@@ -30,9 +30,9 @@
 ></script>
 </head>
 
-<body>
+<body >
 
-<footer class="container py-5">
+<footer class="container py-5" >
   <div class="row">
     <div class="col-12 col-md">
       <img src="../img/CareHK.jpg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mb-2" role="img" viewBox="0 0 24 24"><title>Product</title><circle cx="12" cy="12" r="10"/><path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"/></svg>
@@ -43,8 +43,8 @@
       <ul class="list-unstyled text-small">
         <li><a class="link-secondary" href="../Layout/aboutus.php">About us</a></li>
         <li><a class="link-secondary" href="#">Careers</a></li>
-        <li><a class="link-secondary" href="#">Terms of use</a></li>
-        <li><a class="link-secondary" href="#">Privacy policy</a></li>
+        <li><a class="link-secondary" href="../Layout/termsofuse.php">Terms of use</a></li>
+        <li><a class="link-secondary" href="../Layout/termsofuse.php">Privacy policy</a></li>
       </ul>
     </div>
     <div class="col-6 col-md">
@@ -59,7 +59,7 @@
       <ul class="list-unstyled text-small">
         <li><a class="link-secondary" href="#">Register is Normal User</a></li>
         <li><a class="link-secondary" href="#">Become a caretaker</a></li>
-        <li><a class="link-secondary" href="#">COVID resources</a></li>
+        <li><a class="link-secondary" href="../Layout/covidresources.php">COVID resources</a></li>
       </ul>
     </div>
     <div class="col-6 col-md">
