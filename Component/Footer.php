@@ -41,10 +41,10 @@
     <div class="col-6 col-md">
       <h5>About CareHK</h5>
       <ul class="list-unstyled text-small">
-        <li><a class="link-secondary" href="../Layout/aboutus.php">About us</a></li>
+        <li><a class="link-secondary" href="../Layout/aboutus.php">About Us</a></li>
         <li><a class="link-secondary" href="#">Careers</a></li>
-        <li><a class="link-secondary" href="../Layout/termsofuse.php">Terms of use</a></li>
-        <li><a class="link-secondary" href="../Layout/termsofuse.php">Privacy policy</a></li>
+        <li><a class="link-secondary" href="../Layout/termsofuse.php">Terms of Use</a></li>
+        <li><a class="link-secondary" href="../Layout/termsofuse.php">Privacy olicy</a></li>
       </ul>
     </div>
     <div class="col-6 col-md">
@@ -57,9 +57,9 @@
     <div class="col-6 col-md">
       <h5>Discover</h5>
       <ul class="list-unstyled text-small">
-        <li><a class="link-secondary" href="#">Register is Normal User</a></li>
-        <li><a class="link-secondary" href="#">Become a caretaker</a></li>
-        <li><a class="link-secondary" href="../Layout/covidresources.php">COVID resources</a></li>
+        <li><a class="link-secondary" href="../Layout/signup_normaluser.php">Register As a Normal User</a></li>
+        <li><a class="link-secondary" href="#">Become a Caretaker</a></li>
+        <li><a class="link-secondary" href="../Layout/covidresources.php">COVID Resources</a></li>
       </ul>
     </div>
     <div class="col-6 col-md">

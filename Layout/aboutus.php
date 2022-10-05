@@ -20,7 +20,7 @@
 
     
 
-<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="../css/bootstrap.min.css" rel="stylesheet">
 
     <style>
       .bd-placeholder-img {
@@ -77,7 +77,7 @@
 
     
     <!-- Custom styles for this template -->
-    <link href="product.css" rel="stylesheet">
+    <link href="../css/product.css" rel="stylesheet">
 
     <style>
 .background {

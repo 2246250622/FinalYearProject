@@ -31,9 +31,9 @@
 
       </ul>
       <form class="d-flex" role="search">
-        <button class="btn btn-primary" type="button">Login</button>
+      <a href="../Layout/signin.php"><button class="btn btn-primary" type="button">Login</button></a>
         &nbsp;
-        <button class="btn btn-outline-warning" type="button">Sign Up</button>
+        <a href="../Layout/signup_normaluser.php"><button class="btn btn-outline-warning" type="button">Sign Up</button></a>
       </form>
     </div>
   </div>
