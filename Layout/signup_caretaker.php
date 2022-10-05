@@ -49,41 +49,41 @@ include('../Component/Navbar.php');
                     <div class="row">
                         <div class="mb-3 col-md-6">
                             <label>First Name<span class="text-danger">*</span></label>
-                            <input type="text" name="fname" class="form-control" placeholder="Enter First Name" pattern="[A-Za-z]">
+                            <input type="text" name="fname" class="form-control" placeholder="Enter First Name" pattern="^[A-Za-z \s*]+$" title="Please enter the correct format of the first name" required />
                         </div>
 
                         <div class="mb-3 col-md-6">
                             <label>Last Name<span class="text-danger">*</span></label>
-                            <input type="text" name="Lname" class="form-control" placeholder="Enter Last Name">
+                            <input type="text" name="Lname" class="form-control" placeholder="Enter Last Name" pattern="^[A-Za-z \s*]+$" title="Please enter the correct format of the last name" required />
                         </div>
 
                         <div class="mb-3 col-md-6">
                             <label>Sex<span class="text-danger">*</span></label>
                             <br>
                             <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="sex" id="male" value="male">
+                            <input class="form-check-input" type="radio" name="gender" id="male" value="male" checked required/>
                             <label class="form-check-label" for="inlineRadio1">Male</label>
                         </div>
                         <div class="form-check form-check-inline">
-                          <input class="form-check-input" type="radio" name="sex" id="female" value="female">
+                          <input class="form-check-input" type="radio" name="gender" id="female" value="female">
                           <label class="form-check-label" for="inlineRadio2">Female</label>
                         </div>
                         <div class="form-check form-check-inline">
-                          <input class="form-check-input" type="radio" name="sex" id="intersex" value="intersex">
+                          <input class="form-check-input" type="radio" name="gender" id="intersex" value="intersex">
                           <label class="form-check-label" for="inlineRadio3">Intersex</label>
                         </div>
                         </div>
 
                         <div class="mb-3 col-md-6">
                             <label>Date of Birth<span class="text-danger">*</span></label>
-                            <input type="date" name="dob" class="form-control" placeholder="Enter Date of Birth">
+                            <input type="date" name="dob" class="form-control" placeholder="Enter Date of Birth"  max="1822-10-05" max="2004-10-05" required/>
                         </div>
 
                         <div class="mb-3 col-md-5">
                             <label>Country Code<span class="text-danger">*</span></label>
                             
                             <!-- country codes (ISO 3166) and Dial codes. -->
-                        <select name="countrycode" id="countrycode" class="form-select" placeholder="Select Country Code">
+                        <select name="countrycode" id="countrycode" class="form-select" placeholder="Select Country Code" required>
                           <option selected data-countryCode="HK" value="852">Hong Kong (+852)</option>
                           <option data-countryCode="TW" value="886">Taiwan (+886)</option>
                           <option data-countryCode="CN" value="86">China (+86)</option>
@@ -309,23 +309,23 @@ include('../Component/Navbar.php');
                         <div class="mb-3 col-md-7">
                             <label>Phone Number<span class="text-danger">*</span></label>
                             
-                            <input type="tel" name="phonenumber" class="form-control" placeholder="Enter Phone Number">
+                            <input type="tel" name="phonenumber" class="form-control" placeholder="Enter Phone Number" pattern="[0-9]{1,10}" title="Range 1-10 numeric characters only" required />
                         </div>
 
 
 
                         <div class="mb-3 col-md-12">
                             <label>Email<span class="text-danger">*</span></label>
-                            <input type="email" name="email" class="form-control" placeholder="Enter Email">
+                            <input type="email" name="email" class="form-control" placeholder="Enter Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$" title="Please enter the correct format of the email" required />
                         </div>
 
                         <div class="mb-3 col-md-12">
                             <label>Password<span class="text-danger">*</span></label>
-                            <input type="password" name="password" class="form-control" placeholder="Enter Password">
+                            <input type="password" name="password" class="form-control" placeholder="Enter Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="At least one number and one uppercase and lowercase letter, and at least 6 or more characters" required />
                         </div>
                         <div class="mb-3 col-md-12">
                             <label>Confirm Password<span class="text-danger">*</span></label>
-                            <input type="password" name="confirmpassword" class="form-control" placeholder="Confirm Password">
+                            <input type="password" name="confirmpassword" class="form-control" placeholder="Confirm Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="At least one number and one uppercase and lowercase letter, and at least 6 or more characters" required />
                         </div>
 
                         <div class="mb-3 col-md-12">
@@ -338,8 +338,9 @@ include('../Component/Navbar.php');
     </ul>
     <div class="input-group mb-3">
 
-                        <label class="input-group-text" for="inputGroupFile01">Accept PDF Only</label>
+                       
     <input type="file" class="form-control" aria-label="file example" accept="application/pdf" required>
+    <label class="input-group-text" for="inputGroupFile01">Accept PDF Only</label>
     </div>
   </div>
                         
