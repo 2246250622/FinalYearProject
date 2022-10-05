@@ -49,7 +49,7 @@ include('../Component/Navbar.php');
                     <div class="row">
                         <div class="mb-3 col-md-6">
                             <label>First Name<span class="text-danger">*</span></label>
-                            <input type="text" name="fname" class="form-control" placeholder="Enter First Name">
+                            <input type="text" name="fname" class="form-control" placeholder="Enter First Name" pattern="[A-Za-z]">
                         </div>
 
                         <div class="mb-3 col-md-6">
@@ -338,8 +338,8 @@ include('../Component/Navbar.php');
     </ul>
     <div class="input-group mb-3">
 
-                        <label class="input-group-text" for="inputGroupFile01">Upload =></label>
-    <input type="file" class="form-control" aria-label="file example" required>
+                        <label class="input-group-text" for="inputGroupFile01">Accept PDF Only</label>
+    <input type="file" class="form-control" aria-label="file example" accept="application/pdf" required>
     </div>
   </div>
                         
@@ -362,7 +362,7 @@ include('../Component/Navbar.php');
 
 
                         <div class="col-md-12">
-                           <button class="btn btn-primary float-end">Signup Now</button>
+                           <button type="submit" class="btn btn-primary float-end">Signup Now</button>
                         </div>
                     </div>
                 </form>

@@ -47,12 +47,12 @@ include('../Component/Navbar.php');
                     <div class="row">
                         <div class="mb-3 col-md-6">
                             <label>First Name<span class="text-danger">*</span></label>
-                            <input type="text" name="fname" class="form-control" placeholder="Enter First Name">
+                            <input type="text" name="fname" class="form-control" placeholder="Enter First Name" pattern="^([a-zA-Z]+\s)*[a-zA-Z]+$">
                         </div>
 
                         <div class="mb-3 col-md-6">
                             <label>Last Name<span class="text-danger">*</span></label>
-                            <input type="text" name="Lname" class="form-control" placeholder="Enter Last Name">
+                            <input type="text" name="Lname" class="form-control" placeholder="Enter Last Name" pattern="^([a-zA-Z]+\s)*[a-zA-Z]+$">
                         </div>
 
                         <div class="mb-3 col-md-6">
@@ -307,23 +307,23 @@ include('../Component/Navbar.php');
                         <div class="mb-3 col-md-7">
                             <label>Phone Number<span class="text-danger">*</span></label>
                             
-                            <input type="tel" name="phonenumber" class="form-control" placeholder="Enter Phone Number">
+                            <input type="tel" name="phonenumber" class="form-control" placeholder="Enter Phone Number" pattern="[0-9]{10}">
                         </div>
 
 
 
                         <div class="mb-3 col-md-12">
                             <label>Email<span class="text-danger">*</span></label>
-                            <input type="email" name="email" class="form-control" placeholder="Enter Email">
+                            <input type="email" name="email" class="form-control" placeholder="Enter Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$" title="Please fill in the correct phone number" required />
                         </div>
 
                         <div class="mb-3 col-md-12">
                             <label>Password<span class="text-danger">*</span></label>
-                            <input type="password" name="password" class="form-control" placeholder="Enter Password">
+                            <input type="password" name="password" class="form-control" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="At least one number and one uppercase and lowercase letter, and at least 6 or more characters" required />
                         </div>
                         <div class="mb-3 col-md-12">
                             <label>Confirm Password<span class="text-danger">*</span></label>
-                            <input type="password" name="confirmpassword" class="form-control" placeholder="Confirm Password">
+                            <input type="password" name="confirmpassword" class="form-control" placeholder="Confirm Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="at least one number and one uppercase and lowercase letter, and at least 6 or more characters" required />
                         </div>
 
                         
