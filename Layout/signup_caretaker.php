@@ -37,28 +37,29 @@
   <body>
   <?php 
 include('../Component/Navbar.php');
+require('../Layout/config.php');
 ?>  
 
 <div class="container">
 <div class="row">
         <div class="col-md-6 offset-md-3">
             <div class="signup-form">
-                <form action="" class="mt-5 border p-4 bg-light shadow">
+                <form action="<?php echo $_SERVER["PHP_SELF"] ?>" method="post" class="mt-5 border p-4 bg-light shadow">
                     <h4 class="mb-3 text-secondary">Create Your Account(Caretaker)</h4>
                     <p class=" mt-2 text-secondary">If you want to register as a normal user, Please <a href="../Layout/signup_normaluser.php">Click Here</a></p>
                     <div class="row">
                         <div class="mb-3 col-md-6">
                             <label>First Name<span class="text-danger">*</span></label>
-                            <input type="text" name="fname" class="form-control" placeholder="Enter First Name" pattern="^[A-Za-z \s*]+$" title="Please enter the correct format of the first name" required />
+                            <input type="text" name="fname" id="fname" class="form-control" placeholder="Enter First Name" autofocus="autofocus" pattern="^[A-Za-z \s*]+$" title="Please enter the correct format of the first name" required />
                         </div>
 
                         <div class="mb-3 col-md-6">
                             <label>Last Name<span class="text-danger">*</span></label>
-                            <input type="text" name="Lname" class="form-control" placeholder="Enter Last Name" pattern="^[A-Za-z \s*]+$" title="Please enter the correct format of the last name" required />
+                            <input type="text" name="lname" id="lname" class="form-control" placeholder="Enter Last Name" pattern="^[A-Za-z \s*]+$" title="Please enter the correct format of the last name" required />
                         </div>
 
                         <div class="mb-3 col-md-6">
-                            <label>Sex<span class="text-danger">*</span></label>
+                            <label>Gender<span class="text-danger">*</span></label>
                             <br>
                             <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" name="gender" id="male" value="male" checked required/>
@@ -76,7 +77,7 @@ include('../Component/Navbar.php');
 
                         <div class="mb-3 col-md-6">
                             <label>Date of Birth<span class="text-danger">*</span></label>
-                            <input type="date" name="dob" class="form-control" placeholder="Enter Date of Birth"  max="1822-10-05" max="2004-10-05" required/>
+                            <input type="date" name="dob" id="dob" class="form-control" placeholder="Enter Date of Birth"  max="1822-10-05" max="2004-10-05" required/>
                         </div>
 
                         <div class="mb-3 col-md-5">
@@ -309,23 +310,27 @@ include('../Component/Navbar.php');
                         <div class="mb-3 col-md-7">
                             <label>Phone Number<span class="text-danger">*</span></label>
                             
-                            <input type="tel" name="phonenumber" class="form-control" placeholder="Enter Phone Number" pattern="[0-9]{1,10}" title="Range 1-10 numeric characters only" required />
+                            <input type="tel" name="phonenumber" id="phonenumber" class="form-control" placeholder="Enter Phone Number" pattern="[0-9]{1,10}" title="Range 1-10 numeric characters only" required />
                         </div>
 
 
+                        <div class="mb-3 col-md-12">
+                            <label>HKID<span class="text-danger">*</span></label>
+                            <input type="text" name="hkid" id="hkid" class="form-control" placeholder="Enter HKID" pattern="^([A-Z]{1,2})([0-9]{6})([A0-9])$" title="Please enter the correct format of the email" required />
+                        </div>
 
                         <div class="mb-3 col-md-12">
                             <label>Email<span class="text-danger">*</span></label>
-                            <input type="email" name="email" class="form-control" placeholder="Enter Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$" title="Please enter the correct format of the email" required />
+                            <input type="email" name="email" id="email" class="form-control" placeholder="Enter Email" pattern="[a-zA-Z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$" title="Please enter the correct format of the email" required />
                         </div>
 
                         <div class="mb-3 col-md-12">
                             <label>Password<span class="text-danger">*</span></label>
-                            <input type="password" name="password" class="form-control" placeholder="Enter Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="At least one number and one uppercase and lowercase letter, and at least 6 or more characters" required />
+                            <input type="password" name="password" id="password" class="form-control" placeholder="Enter Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="At least one number and one uppercase and lowercase letter, and at least 6 or more characters" required />
                         </div>
                         <div class="mb-3 col-md-12">
                             <label>Confirm Password<span class="text-danger">*</span></label>
-                            <input type="password" name="confirmpassword" class="form-control" placeholder="Confirm Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="At least one number and one uppercase and lowercase letter, and at least 6 or more characters" required />
+                            <input type="password" name="confirmpassword" id="confirmpassword" class="form-control" placeholder="Confirm Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="At least one number and one uppercase and lowercase letter, and at least 6 or more characters" required />
                         </div>
 
                         <div class="mb-3 col-md-12">
@@ -339,10 +344,19 @@ include('../Component/Navbar.php');
     <div class="input-group mb-3">
 
                        
-    <input type="file" class="form-control" aria-label="file example" accept="application/pdf" required>
+    <input type="file" name="pdf" id="pdf" value="" class="form-control" aria-label="file example" accept="application/pdf" required>
     <label class="input-group-text" for="inputGroupFile01">Accept PDF Only</label>
     </div>
   </div>
+
+
+
+                          <div class="mb-3 col-md-12">
+                            <label>Description<span class="text-danger"> (Optional)</span></label>
+                            <textarea name="description" id="description" class="form-control" placeholder="Descript yourself here" rows="4" cols="50" ></textarea>
+                        </div>
+
+
                         
 
                       <br><br>
@@ -363,10 +377,54 @@ include('../Component/Navbar.php');
 
 
                         <div class="col-md-12">
-                           <button type="submit" class="btn btn-primary float-end">Signup Now</button>
+                           <button id="submit" class="btn btn-primary float-end">Signup Now</button>
                         </div>
                     </div>
+
+                    <?php
+
+        if (isset($_POST['submit'])) {
+          $pdf=$_FILES['pdf']['name'];
+          $pdf_type=$_FILES['pdf']['type'];
+          $pdf_size=$_FILES['pdf']['size'];
+          $pdf_tem_loc=$_FILES['pdf']['tmp_name'];
+          $pdf_store="pdf/".$pdf;
+
+          move_uploaded_file($pdf_tem_loc,$pdf_store);
+
+
+        }?>
+
                 </form>
+                <?php
+              
+                      if (isset($_POST["email"])){
+                  extract($_POST);
+                  $sql = "SELECT * FROM user WHERE Email = '$email' ";
+                  $ls = mysqli_query($conn, $sql);
+
+                  $error = mysqli_error($conn);
+                  if ($error =="") {
+                      $total = mysqli_num_rows($ls);
+                  if ($total > 0){
+                    echo '<span style="color:red;text-align:center;">This Email is already exist!</span>';
+                  }elseif($password != $confirmpassword){
+                    echo '<span style="color:red;text-align:center;">Password and Confirm password do not match. please enter again!</span>';
+                  }else{
+
+                    $sql = "INSERT INTO user VALUES(NULL,'$fname','$lname','$gender','$dob','$countrycode$phonenumber','$hkid','$email','$password','$pdf', '$description',1,'Unapproved',NULL)";
+                  mysqli_query($conn, $sql);
+                  $error = mysqli_error($conn);
+                  if ($error !=""){
+                    echo $error;
+                  }else{
+                    echo '<span style="color:red;text-align:center;"><h2>Congratulations! Your account have been successfully created.</h2></span>';
+                  }
+                  }
+                  }
+                }
+                      ?>
+
                 <p class="text-center mt-3 text-secondary">If you have account, Please <a href="../Layout/signin.php">Login Now</a></p>
             </div>
         </div>

@@ -34,54 +34,58 @@
   </head>
   <body>
   <?php 
+  session_start();
 include('../Component/Navbar.php');
+require('../Layout/config.php');
 ?>  
+
+
 
 <div class="container">
     <div class="row">
         <div class="col-md-6 offset-md-3">
             <div class="signup-form">
-                <form action="" class="mt-5 border p-4 bg-light shadow">
+                <form action="<?php echo $_SERVER["PHP_SELF"] ?>" method="post" class="mt-5 border p-4 bg-light shadow">
                     <h4 class="mb-3 text-secondary">Create Your Account(Normal User)</h4>
                     <p class=" mt-2 text-secondary">If you want to register as a caretaker, Please <a href="../Layout/signup_caretaker.php">Click Here</a></p>
                     <div class="row">
                         <div class="mb-3 col-md-6">
                             <label>First Name<span class="text-danger">*</span></label>
-                            <input type="text" name="fname" class="form-control" placeholder="Enter First Name" pattern="^([a-zA-Z]+\s)*[a-zA-Z]+$">
+                            <input type="text" name="fname" id="fname" class="form-control" placeholder="Enter First Name" autofocus="autofocus" pattern="^[A-Za-z \s*]+$" title="Please enter the correct format of the first name" required />
                         </div>
 
                         <div class="mb-3 col-md-6">
                             <label>Last Name<span class="text-danger">*</span></label>
-                            <input type="text" name="Lname" class="form-control" placeholder="Enter Last Name" pattern="^([a-zA-Z]+\s)*[a-zA-Z]+$">
+                            <input type="text" name="lname" id="lname" class="form-control" placeholder="Enter Last Name" pattern="^[A-Za-z \s*]+$" title="Please enter the correct format of the last name" required />
                         </div>
 
                         <div class="mb-3 col-md-6">
-                            <label>Sex<span class="text-danger">*</span></label>
+                            <label>Gender<span class="text-danger">*</span></label>
                             <br>
                             <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="sex" id="male" value="male">
+                            <input class="form-check-input" type="radio" name="gender" id="male" value="male" checked required/>
                             <label class="form-check-label" for="inlineRadio1">Male</label>
                         </div>
                         <div class="form-check form-check-inline">
-                          <input class="form-check-input" type="radio" name="sex" id="female" value="female">
+                          <input class="form-check-input" type="radio" name="gender" id="female" value="female">
                           <label class="form-check-label" for="inlineRadio2">Female</label>
                         </div>
                         <div class="form-check form-check-inline">
-                          <input class="form-check-input" type="radio" name="sex" id="intersex" value="intersex">
+                          <input class="form-check-input" type="radio" name="gender" id="intersex" value="intersex">
                           <label class="form-check-label" for="inlineRadio3">Intersex</label>
                         </div>
                         </div>
 
                         <div class="mb-3 col-md-6">
                             <label>Date of Birth<span class="text-danger">*</span></label>
-                            <input type="date" name="dob" class="form-control" placeholder="Enter Date of Birth">
+                            <input type="date" name="dob" id="dob" class="form-control" placeholder="Enter Date of Birth"  max="1822-10-05" max="2004-10-05" required/>
                         </div>
 
                         <div class="mb-3 col-md-5">
                             <label>Country Code<span class="text-danger">*</span></label>
                             
                             <!-- country codes (ISO 3166) and Dial codes. -->
-                        <select name="countrycode" id="countrycode" class="form-select" placeholder="Select Country Code">
+                        <select name="countrycode" id="countrycode" class="form-select" placeholder="Select Country Code" required>
                           <option selected data-countryCode="HK" value="852">Hong Kong (+852)</option>
                           <option data-countryCode="TW" value="886">Taiwan (+886)</option>
                           <option data-countryCode="CN" value="86">China (+86)</option>
@@ -307,30 +311,30 @@ include('../Component/Navbar.php');
                         <div class="mb-3 col-md-7">
                             <label>Phone Number<span class="text-danger">*</span></label>
                             
-                            <input type="tel" name="phonenumber" class="form-control" placeholder="Enter Phone Number" pattern="[0-9]{10}">
+                            <input type="tel" name="phonenumber" id="phonenumber" class="form-control" placeholder="Enter Phone Number" pattern="[0-9]{1,10}" title="Range 1-10 numeric characters only" required />
                         </div>
 
 
 
                         <div class="mb-3 col-md-12">
                             <label>Email<span class="text-danger">*</span></label>
-                            <input type="email" name="email" class="form-control" placeholder="Enter Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$" title="Please fill in the correct phone number" required />
+                            <input type="email" name="email" id="email" class="form-control" placeholder="Enter Email" pattern="[a-zA-Z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$" title="Please enter the correct format of the email" required />
                         </div>
 
                         <div class="mb-3 col-md-12">
                             <label>Password<span class="text-danger">*</span></label>
-                            <input type="password" name="password" class="form-control" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="At least one number and one uppercase and lowercase letter, and at least 6 or more characters" required />
+                            <input type="password" name="password" id="password" class="form-control" placeholder="Enter Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="At least one number and one uppercase and lowercase letter, and at least 6 or more characters" required />
                         </div>
                         <div class="mb-3 col-md-12">
                             <label>Confirm Password<span class="text-danger">*</span></label>
-                            <input type="password" name="confirmpassword" class="form-control" placeholder="Confirm Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="at least one number and one uppercase and lowercase letter, and at least 6 or more characters" required />
+                            <input type="password" name="confirmpassword" id="confirmpassword" class="form-control" placeholder="Confirm Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="At least one number and one uppercase and lowercase letter, and at least 6 or more characters" required />
                         </div>
 
                         
 
                         <div class="col-12">
     <div class="form-check">
-      <input class="form-check-input is-invalid" type="checkbox" value="" id="invalidCheck3" aria-describedby="invalidCheck3Feedback" checked disabled>
+      <input class="form-check-input is-invalid" type="checkbox" value="checked" id="checked" aria-describedby="invalidCheck3Feedback" checked disabled>
       <label class="form-check-label" for="invalidCheck3">
       I am 18 years or older to use CareHK
       </label>
@@ -343,19 +347,57 @@ include('../Component/Navbar.php');
 
 
                         <div class="col-md-12">
-                           <button class="btn btn-primary float-end">Signup Now</button>
+                           <button type="submit" class="btn btn-primary float-end" id="submit">Signup Now</button>
                         </div>
                     </div>
                 </form>
+
+                <?php
+                      if (isset($_POST["email"])){
+                  extract($_POST);
+                  $sql = "SELECT * FROM user WHERE Email = '$email' ";
+                  $ls = mysqli_query($conn, $sql);
+
+                  $error = mysqli_error($conn);
+                  if ($error =="") {
+                      $total = mysqli_num_rows($ls);
+                  if ($total > 0){
+                    echo '<span style="color:red;text-align:center;">This Email is already exist!</span>';
+                  }elseif($password != $confirmpassword){
+                    echo '<span style="color:red;text-align:center;">Password and Confirm password do not match. please enter again!</span>';
+                  }else{
+                    $sql = "INSERT INTO user VALUES(NULL,'$fname','$lname','$gender','$dob','$countrycode$phonenumber',NULL,'$email','$password',NULL, NULL,0,'Approved',50)";
+                  mysqli_query($conn, $sql);
+                  $error = mysqli_error($conn);
+                  if ($error !=""){
+                    echo $error;
+                  }else{
+                    echo '<span style="color:red;text-align:center;"><h2>Congratulations! Your account have been successfully created.</h2></span>';
+                  }
+                  }
+                  }
+                }
+                      ?>
+
                 <p class="text-center mt-3 text-secondary">If you have account, Please <a href="../Layout/signin.php">Login Now</a></p>
             </div>
         </div>
     </div>
 </div>
 
+
+
+
+
+
+
+
+
 <?php
 include('../Component/Footer.php');
 ?>
+
+
     
   </body>
 </html>
