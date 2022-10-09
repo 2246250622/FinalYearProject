@@ -38,11 +38,12 @@
   <body class="text-center">
   <?php 
 include('../Component/Navbar.php');
+require('../Layout/config.php')
 ?>  
 
     
 <main class="form-signin">
-  <form>
+  <form action="../Layout/loginhandle.php" method="post">
     <img class="mb-4" src="../img/CareHK.jpg" alt="" width="72" height="57">
     <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
@@ -73,6 +74,11 @@ include('../Component/Navbar.php');
     <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
     <p class="mt-4 mb-3 text-muted">&copy; 2022–2023 </p>
   </form>
+
+  <?php
+  
+  
+  ?>
 </main>
 
 <?php

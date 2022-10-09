@@ -25,9 +25,18 @@
           <a class="nav-link" aria-current="page" href="../Layout/index.php">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link" href="../Layout/aboutus.php">About Us</a>
         </li>
 
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Join Us
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item"  href="../Layout/signup_caretaker">To be a caretaker</a></li>
+            <li><a class="dropdown-item" href="../Layout/signup_normaluser">Register as a member</a></li>
+          </ul>
+        </li>
 
       </ul>
       <form class="d-flex" role="search">
