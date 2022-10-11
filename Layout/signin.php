@@ -1,3 +1,6 @@
+<?php 
+   session_start();
+   if (!isset($_SESSION['email']) && !isset($_SESSION['ID'])) {   ?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -11,7 +14,7 @@
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/sign-in/">
 
     
-
+<link rel="stylesheet" href="./css/chatbox.css">
     <!-- Bootstrap core CSS -->
 <link href="../css/bootstrap.min.css" rel="stylesheet">
 
@@ -47,13 +50,19 @@ require('../Layout/config.php')
     <img class="mb-4" src="../img/CareHK.jpg" alt="" width="72" height="57">
     <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
+    <?php if (isset($_GET['error'])) { ?>  <!-- Error red alert box -->
+      	      <div class="alert alert-danger" role="alert">
+				  <?=$_GET['error']?>
+			  </div>
+			  <?php } ?>
+
     <div class="form-floating">
-      <input type="email" class="form-control" id="floatingInput" autofocus="autofocus" placeholder="name@example.com">
-      <label for="floatingInput">Email address</label>
+      <input type="email" class="form-control" id="email" name="email" autofocus="autofocus" placeholder="name@example.com">
+      <label for="email">Email address</label>
     </div>
     <div class="form-floating">
-      <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-      <label for="floatingPassword">Password</label>
+      <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+      <label for="password">Password</label>
     </div>
 
     <div class="checkbox mb-3">
@@ -87,3 +96,6 @@ include('../Component/Footer.php');
     
   </body>
 </html>
+<?php }else{
+	header("Location: homepage.php");
+} ?>

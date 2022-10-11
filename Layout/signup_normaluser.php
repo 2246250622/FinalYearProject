@@ -366,7 +366,7 @@ require('../Layout/config.php');
                   }elseif($password != $confirmpassword){
                     echo '<span style="color:red;text-align:center;">Password and Confirm password do not match. please enter again!</span>';
                   }else{
-                    $sql = "INSERT INTO user VALUES(NULL,'$fname','$lname','$gender','$dob','$countrycode$phonenumber',NULL,'$email','$password',NULL, NULL,0,'Approved',50)";
+                    $sql = "INSERT INTO user VALUES(NULL,'$fname','$lname','$gender','$dob','$countrycode$phonenumber',NULL,'$email','$password',NULL, NULL,'normal','Approved',50)";
                   mysqli_query($conn, $sql);
                   $error = mysqli_error($conn);
                   if ($error !=""){

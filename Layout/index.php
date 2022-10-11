@@ -15,7 +15,8 @@
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 
-
+<script src="../js/chatbox.js"></script>
+<link rel="stylesheet" href="./css/chatbox.css">
     
 
 <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -165,6 +166,80 @@ include('../Component/Navbar.php');
   </div>
 </main>
 
+	
+<button class="btn chatBtn chatToggle" id="chatToggle">Online Chat<i class="far fa-comment-alt" style="margin-left: 1rem"></i></button>
+    <div class="chatbox">
+      <div class="chatbox-title">
+        <h4><i class="fas fa-robot" style="margin-right: 0.5rem"></i>Online Inquiry</h4>
+      </div>
+      <div class="chat-container">
+        <div class="reply-content">
+          <span class="reply-icon" style="margin-right:0.5rem"><i class="fas fa-robot"></i></span>
+          <p>You can try using self-inquiry function to answer your doubt.
+            If still has any question, you can leave a message to us.
+            <br/><span class="reply-time">10:55PM</span></p>
+        </div>
+        
+      </div>
+
+      <div class="answerbtn-group" >
+        <button id="ctacAsk" class="btn chatBtn">create account</button>
+        <button id="searchAsk" class="btn chatBtn">Covid-19 in HK</button>
+        <button id="mkappAsk" class="btn chatBtn">make appointment</button>
+        <button id="chatBtn" class="btn chatBtn">online chat</button>
+      </div>
+    </div>
+
+
+
+    <!-- load data -->
+    <script>
+
+      $(document).ready(function() {
+        var date = (document.getElementById(
+          "date"
+        ).innerHTML = new Date().getFullYear());
+
+        $(".chatbox").hide();
+        $(document).on("click", "#ctacAsk", function(){
+          appendAnswer(1);
+        });
+        $(document).on("click", "#searchAsk", function(){
+          appendAnswer(2);
+        });
+        $(document).on("click", "#mkappAsk", function(){
+          appendAnswer(3);
+        });
+        $(document).on("click", "#chatBtn", function(){
+          appendAnswer(4);
+        })
+        $(document).on("click", "#sendMsg", function(){
+          console.log("hello");
+          sendMsg();
+        });
+        $(document).on("click", "#out", function(){
+          restore();
+        });
+        $("#chatToggle").click(function(){
+          if($(".chatbox").is(":visible")){
+            $(".chatbox").fadeOut(200); 
+          } else {
+            $(".chatbox").fadeIn(200);
+          }
+        });
+        $("#abc").click(function(){
+          window.location.href = "./property-search.html";
+        });
+
+        
+      });
+    </script>
+    <!-- end of load data -->
+    <!-- navbar js -->
+
+
+	
+	
 
 
 <?php

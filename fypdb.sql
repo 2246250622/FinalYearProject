@@ -49,14 +49,14 @@ CREATE TABLE IF NOT EXISTS `user` (
 --
 -- 傾印資料表的資料 `caretaker`
 --
-INSERT INTO `user` (`ID`, `FName`, `LName`, `Gender`, `DateofBirth`, `Phone`, `Email`, `Password`, `Type`, `Point`) VALUES
+INSERT INTO `user` (`ID`, `FName`, `LName`, `Gender`, `DateofBirth`, `Phone`, `Email`, `Password`, `Role`, `Point`) VALUES
 (1, 'User', 'User', 'male', '2000-01-01', '85212345678', 'User@gmail.com' ,'Password', 0, '50');
 
-INSERT INTO `user` (`ID`, `FName`, `LName`, `Gender`, `DateofBirth`, `Phone`, `HKID`, `Email`, `Password`, `Description`, `Type` ,`Status`) VALUES
+INSERT INTO `user` (`ID`, `FName`, `LName`, `Gender`, `DateofBirth`, `Phone`, `HKID`, `Email`, `Password`, `Description`, `Role` ,`Status`) VALUES
 (2, 'Caretaker','Caretaker','male' ,'2000-02-02','85287654321','Y123456A', 'Caretaker@gmail.com', 'Password', 'I am a caretaker', 1, 'Approved');
 
 
-INSERT INTO `user` (`ID`, `Email`, `Password` , `Type`) VALUES
+INSERT INTO `user` (`ID`, `Email`, `Password` , `Role`) VALUES
 (3, 'admin@gmail.com', 'Password',2);
 
 
