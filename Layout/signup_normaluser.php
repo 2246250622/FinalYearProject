@@ -38,7 +38,35 @@
 include('../Component/Navbar.php');
 require('../Layout/config.php');
 ?>  
+               <?php
+                      if (isset($_POST["email"])){
+                  extract($_POST);
+                  $sql = "SELECT * FROM user WHERE Email = '$email' ";
+                  $ls = mysqli_query($conn, $sql);
 
+                  $error = mysqli_error($conn);
+                  if ($error =="") {
+                      $total = mysqli_num_rows($ls);
+                  if ($total > 0){
+                    header("Location: ../Layout/signup_normaluser.php?error=This Email is already exist!"); 
+                    //echo '<span style="color:red;text-align:center;">This Email is already exist!</span>';
+                  }elseif($password != $confirmpassword){
+                    header("Location: ../Layout/signup_normaluser.php?error=Password and Confirm password do not match. please enter again!");    
+                    //echo '<span style="color:red;text-align:center;">Password and Confirm password do not match. please enter again!</span>';
+                  }else{
+                    $sql = "INSERT INTO user VALUES(NULL,'$fname','$lname','$gender','$dob','$countrycode$phonenumber',NULL,'$email','$password',NULL, NULL,'normal','Approved',50)";
+                  mysqli_query($conn, $sql);
+                  $error = mysqli_error($conn);
+                  if ($error !=""){
+                    echo $error;
+                  }else{
+                    header("Location: ../Layout/signup_normaluser.php?success=Congratulations! Your account have been successfully created.");    
+                    // echo '<span style="color:red;text-align:center;"><h2>Congratulations! Your account have been successfully created.</h2></span>';
+                  }
+                  }
+                  }
+                }
+                      ?>
 
 
 <div class="container">
@@ -48,6 +76,19 @@ require('../Layout/config.php');
                 <form action="<?php echo $_SERVER["PHP_SELF"] ?>" method="post" class="mt-5 border p-4 bg-light shadow">
                     <h4 class="mb-3 text-secondary">Create Your Account(Normal User)</h4>
                     <p class=" mt-2 text-secondary">If you want to register as a caretaker, Please <a href="../Layout/signup_caretaker.php">Click Here</a></p>
+                    
+                    <?php if (isset($_GET['error'])) { ?>  <!-- Error red alert box -->
+                          <div class="alert alert-danger" role="alert">
+                      <?=$_GET['error']?>
+                    </div>
+                    <?php } ?>
+
+                    <?php if (isset($_GET['success'])) { ?>  <!-- Success green alert box -->
+                          <div class="alert alert-success" role="alert">
+                      <?=$_GET['success']?>
+                    </div>
+                    <?php } ?>
+
                     <div class="row">
                         <div class="mb-3 col-md-6">
                             <label>First Name<span class="text-danger">*</span></label>
@@ -352,32 +393,7 @@ require('../Layout/config.php');
                     </div>
                 </form>
 
-                <?php
-                      if (isset($_POST["email"])){
-                  extract($_POST);
-                  $sql = "SELECT * FROM user WHERE Email = '$email' ";
-                  $ls = mysqli_query($conn, $sql);
-
-                  $error = mysqli_error($conn);
-                  if ($error =="") {
-                      $total = mysqli_num_rows($ls);
-                  if ($total > 0){
-                    echo '<span style="color:red;text-align:center;">This Email is already exist!</span>';
-                  }elseif($password != $confirmpassword){
-                    echo '<span style="color:red;text-align:center;">Password and Confirm password do not match. please enter again!</span>';
-                  }else{
-                    $sql = "INSERT INTO user VALUES(NULL,'$fname','$lname','$gender','$dob','$countrycode$phonenumber',NULL,'$email','$password',NULL, NULL,'normal','Approved',50)";
-                  mysqli_query($conn, $sql);
-                  $error = mysqli_error($conn);
-                  if ($error !=""){
-                    echo $error;
-                  }else{
-                    echo '<span style="color:red;text-align:center;"><h2>Congratulations! Your account have been successfully created.</h2></span>';
-                  }
-                  }
-                  }
-                }
-                      ?>
+ 
 
                 <p class="text-center mt-3 text-secondary">If you have account, Please <a href="../Layout/signin.php">Login Now</a></p>
             </div>

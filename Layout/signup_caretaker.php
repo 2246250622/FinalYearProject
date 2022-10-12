@@ -47,6 +47,19 @@ require('../Layout/config.php');
                 <form action="<?php echo $_SERVER["PHP_SELF"] ?>" method="post" class="mt-5 border p-4 bg-light shadow">
                     <h4 class="mb-3 text-secondary">Create Your Account(Caretaker)</h4>
                     <p class=" mt-2 text-secondary">If you want to register as a normal user, Please <a href="../Layout/signup_normaluser.php">Click Here</a></p>
+                    
+                    <?php if (isset($_GET['error'])) { ?>  <!-- Error red alert box -->
+                          <div class="alert alert-danger" role="alert">
+                      <?=$_GET['error']?>
+                    </div>
+                    <?php } ?>
+
+                    <?php if (isset($_GET['success'])) { ?>  <!-- Success green alert box -->
+                                      <div class="alert alert-success" role="alert">
+                                  <?=$_GET['success']?>
+                                </div>
+                                <?php } ?>
+                    
                     <div class="row">
                         <div class="mb-3 col-md-6">
                             <label>First Name<span class="text-danger">*</span></label>
