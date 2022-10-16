@@ -87,7 +87,9 @@ include('../Component/NavbarLog.php');
 
 
 <main>
-
+<?php
+echo 'user';
+?>
 
 </main>
 

@@ -41,7 +41,7 @@
   <body class="text-center">
   <?php 
 include('../Component/Navbar.php');
-require('../Layout/config.php')
+require('../Layout/config.php');
 ?>  
 
     

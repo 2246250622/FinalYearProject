@@ -21,7 +21,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 	}else {
 
 		
-        $sql = "SELECT * FROM user WHERE Email='$email' AND Password='$password'";
+        $sql = "SELECT  * FROM user WHERE Email='$email' AND Password='$password'";
         $result = mysqli_query($conn, $sql);
 		//echo "mysqli_num_rows($result)";
         if (mysqli_num_rows($result) === 1) {
@@ -35,7 +35,14 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 				$_SESSION['Role'] = $row['Role'];
 				$_SESSION['Gender'] = $row['Gender'];
 
-        		header("Location: ../Layout/homepage.php");
+  if($row['Role'] == 'admin'){
+	header("Location: admin_homepage.php");
+  }else if($row['Role'] == 'caretaker'){
+  	header("Location: caretaker_homepage.php");
+  }else{
+    header("Location: user_homepage.php");
+  }
+
 
         	}else {
         		header("Location: ../Layout/signin.php?error=Incorect User name or password");
@@ -49,3 +56,6 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 }else {
 	header("Location: ../Layout/signin.php");
 }
+
+
+?>
