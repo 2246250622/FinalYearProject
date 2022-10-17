@@ -53,7 +53,7 @@ $ls = mysqli_query($conn, $sql);
                                             <th>Description</th>
                                             <th>Role</th>
                                             <th>Status</th>
-                                            <th>Actions</th>
+                                            <th colspan='2'>Actions</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
@@ -83,7 +83,8 @@ while ($row = mysqli_fetch_array($ls)){
     echo"<td>{$row["Description"]}</td>";
     echo"<td>{$row["Role"]}</td>";
     echo"<td>{$row["Status"]}</td>";
-    echo"<td></td>";
+    echo"<td><a href='../Layout/admin_managementedit.php?id={$row["ID"]}' class='btn btn-success'>Edit</a></td>";
+    echo"<td><button type='button' class='btn btn-danger'>Delete</button></td>";
 	echo "</tr>";
 }
 	

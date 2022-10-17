@@ -43,7 +43,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `Certificates` mediumblob,
   `Description` varchar(255) DEFAULT NULL,
   `Role` enum('normal','caretaker','admin') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-  `Status` varchar(20) DEFAULT NULL,
+  `Status` enum('Unapproved','Approved','Banned') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `Point` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`ID`,`Email`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
