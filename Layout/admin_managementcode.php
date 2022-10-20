@@ -111,7 +111,7 @@ $ls = mysqli_query($conn, $sql);
                                             <th>Action</th>
                                         </tr>
                                     </thead>
-                                    <tfoot>
+                                    <tfoot>.
                                         <tr>
                                         <th>ID Code</th>
                                         <th>Name Code</th>
