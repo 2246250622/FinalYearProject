@@ -48,7 +48,21 @@ $ls = mysqli_query($conn, $sql);
                                             ?>
 
 
-                                <form action="">
+<?php
+
+      $sql="SELECT Certificates from user WHERE ID = '$id'";
+      $query=mysqli_query($conn,$sql);
+      while ($info=mysqli_fetch_array($query)) {
+        ?>
+      <embed type="application/pdf" src="pdf/<?php echo $info['Certificates'] ; ?>" width="900" height="500">
+    <?php
+      }
+
+      ?>
+
+
+                                <form action="../Layout/admin_managementedithandle.php" method="POST">
+                                    <input type="hidden" name="id" value="<?=$id;?>">
                                 <div class="row">
                                         <div class="col-md-6 mb-3">
                                             <label for="">First Name</label>
@@ -79,31 +93,39 @@ $ls = mysqli_query($conn, $sql);
                                             <label for="">Description</label>
                                             <textarea name="description" value="<?=$user['Description'];?>" class="form-control"><?=$user['Description'];?></textarea>
                                     </div>
+                                    
+                                    <div class="col-md-3 mb-6"></div>
 
-                                    <div class="col-md-6 mb-3">
+                                    <div class="col-md-3 mb-6">
                                             <label for="">Role</label>
-                                            <select name="role" required class="form-control">
+                                            <br><br>
+                                            <select name="role" required class="btn btn-warning  dropdown-toggle">
                                             <option value="<?=$user['Role'];?>"><?=$user['Role'];?></option>
                                             <option value="normal">Normal User</option>
                                             <option value="caretaker">Caretaker</option>
                                             <option value="admin">Administrator</option>
                                             </select>
                                     </div>
+                                    
 
-
-                                    <div class="col-md-6 mb-3">
+                                    <div class="col-md-3 mb-6">
                                             <label for="">Status</label>
-                                            <select name="status" required class="form-control">
+                                            <br><br>
+                                            <select name="status" required class="btn btn-danger  dropdown-toggle">
                                             <option value="<?=$user['Status'];?>"><?=$user['Status'];?></option>
                                             <option value="Unapproved">Unapproved</option>
                                             <option value="Approved">Approved</option>
                                             <option value="Banned">Banned</option>
+                                            </select>
                                     </div>
+                                    <div class="col-md-3 mb-6"></div>
+                                    
 
 
                                     <div class="col-md-12 mb-3">
+                                        <br>
                                             <button type="submit" name="update_user"  class="btn btn-primary">Save</button>
-                                    </div>
+                                            </div>
 
 
                                     </div>
@@ -142,8 +164,6 @@ $ls = mysqli_query($conn, $sql);
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="../js/scripts.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
-        <script src="../assets/demo/chart-area-demo.js"></script>
-        <!--<script src="../assets/demo/chart-pie-demo.js"></script>-->
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
         <script src="../js/datatables-simple-demo.js"></script>
        

@@ -34,13 +34,34 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
         		$_SESSION['Email'] = $row['Email'];
 				$_SESSION['Role'] = $row['Role'];
 				$_SESSION['Gender'] = $row['Gender'];
+				$_SESSION['Status'] = $row['Status'];
 
   if($row['Role'] == 'admin'){
 	header("Location: admin_homepage.php");
   }else if($row['Role'] == 'caretaker'){
+	if($_SESSION['Status'] =='Unapproved'){
+		session_destroy(); //destroy the session
+		header("Location: ../Layout/signin.php?error=Please wait for the administrator to approve your account");
+		exit();
+	}else if($_SESSION['Status'] =='Banned'){
+		session_destroy(); //destroy the session
+		header("Location: ../Layout/signin.php?error=Your account has been banned");
+		exit();
+	}else{
   	header("Location: caretaker_homepage.php");
+	}
   }else{
+	if($_SESSION['Status'] =='Unapproved'){
+		session_destroy(); //destroy the session
+		header("Location: ../Layout/signin.php?error=Please wait for the administrator to approve your account");
+		exit();
+	}else if($_SESSION['Status'] =='Banned'){
+		session_destroy(); //destroy the session
+		header("Location: ../Layout/signin.php?error=Your account has been banned");
+		exit();
+	}else{
     header("Location: user_homepage.php");
+	}
   }
 
 

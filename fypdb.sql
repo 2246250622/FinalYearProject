@@ -42,7 +42,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `Description` varchar(255) DEFAULT NULL,
   `Role` enum('normal','caretaker','admin') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `Status` varchar(20) DEFAULT NULL,
-  `Point` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT '0',
+  `Point` int(10)  DEFAULT 0,
   PRIMARY KEY (`ID`,`Email`)
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -51,11 +51,27 @@ CREATE TABLE IF NOT EXISTS `user` (
 --
 
 INSERT INTO `user` (`ID`, `FName`, `LName`, `Gender`, `DateofBirth`, `Phone`, `HKID`, `Email`, `Password`, `Certificates`, `Description`, `Role`, `Status`, `Point`) VALUES
-(1, 'User', 'User', 'male', '2000-01-01', '85212345678', NULL, 'User@gmail.com', 'Password', NULL, NULL, 'normal', 'Approved', '50'),
-(2, 'Caretaker', 'Caretaker', 'female', '2000-02-02', '85287654321', 'Y123456A', 'Caretaker@gmail.com', 'Password', NULL, 'I am a caretaker', 'caretaker', 'Approved', NULL),
-(3, NULL, 'Admin', 'intersex', NULL, NULL, NULL, 'Admin@gmail.com', 'Password', NULL, NULL, 'admin', 'Approved', NULL);
-COMMIT;
+(1, 'User', 'User', 'male', '2000-01-01', '85212345678', NULL, 'User@gmail.com', 'Password', NULL, NULL, 'normal', 'Approved', 50),
+(2, 'Caretaker', 'Caretaker', 'female', '2000-02-02', '85287654321', 'Y123456A', 'Caretaker@gmail.com', 'Password', NULL, 'I am a caretaker', 'caretaker', 'Approved', 0),
+(3, NULL, 'Admin', 'intersex', NULL, NULL, NULL, 'Admin@gmail.com', 'Password', NULL, NULL, 'admin', 'Approved', 0);
 
+
+
+
+CREATE TABLE IF NOT EXISTS `code` (
+  `ID_Code` int NOT NULL AUTO_INCREMENT,
+  `Name_Code` int(10) NOT NULL,
+  `Token_Code` varchar(20) NOT NULL,
+  PRIMARY KEY (`ID_Code`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+INSERT INTO `code` (`ID_Code`, `Name_Code`, `Token_Code`) VALUES
+(1, 100, '100Point' ),
+(2, 200, '200Point' ),
+(3, 500, '500Point' ),
+(4, 1000, '1000Point' );
+
+COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION.. */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

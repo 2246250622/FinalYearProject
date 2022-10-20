@@ -32,16 +32,18 @@ $ls = mysqli_query($conn, $sql);
                 <main>
                     <div class="container-fluid px-4">
                         <h1 class="mt-4">User Manangment</h1>
-                       
-                        <div class="card mb-4">
                             
+                        <div class="card mb-4">   
                         </div>
+                        <?php include('../Layout/message.php')?> 
                         <div class="card mb-4">
+                         
                             <div class="card-header">
+                                
                                 <i class="fas fa-table me-1"></i>
                                 Account DataTable
                             </div>
-                            <div class="card-body">
+                            <div class="card-body"> 
                                 <table id="datatablesSimple">
                                     <thead>
                                         <tr>
@@ -84,7 +86,8 @@ while ($row = mysqli_fetch_array($ls)){
     echo"<td>{$row["Role"]}</td>";
     echo"<td>{$row["Status"]}</td>";
     echo"<td><a href='../Layout/admin_managementedit.php?id={$row["ID"]}' class='btn btn-success'>Edit</a></td>";
-    echo"<td><button type='button' class='btn btn-danger'>Delete</button></td>";
+    echo"<td><form action='../Layout/admin_managementedithandle.php' method='POST'><button type='submit' name='delete_user' value='{$row["ID"]}' class='btn btn-danger'>Delete</button></form></td>";
+
 	echo "</tr>";
 }
 	

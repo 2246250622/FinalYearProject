@@ -40,6 +40,37 @@ include('../Component/Navbar.php');
 require('../Layout/config.php');
 ?>  
 
+<?php         
+                  if (isset($_POST["email"])){
+                  extract($_POST);
+                  $sql = "SELECT * FROM user WHERE Email = '$email' ";
+                  $ls = mysqli_query($conn, $sql);
+
+                  $error = mysqli_error($conn);
+                  if ($error =="") {
+                      $total = mysqli_num_rows($ls);
+                  if ($total > 0){
+                    //echo '<span style="color:red;text-align:center;">This Email is already exist!</span>';
+                    header("Location: ../Layout/signup_caretaker.php?error=This Email is already exist!");
+                  }elseif($password != $confirmpassword){
+                    //echo '<span style="color:red;text-align:center;">Password and Confirm password do not match. please enter again!</span>';
+                    header("Location: ../Layout/signup_caretaker.php?error=Password and Confirm password do not match. please enter again!");  
+                  }else{
+
+                    $sql = "INSERT INTO user VALUES(NULL,'$fname','$lname','$gender','$dob','$countrycode$phonenumber','$hkid','$email','$password','$pdf', '$description','caretaker','Unapproved',0)";
+                  mysqli_query($conn, $sql);
+                  $error = mysqli_error($conn);
+                  if ($error !=""){
+                    echo $error;
+                  }else{
+                   // echo '<span style="color:red;text-align:center;"><h2>Congratulations! Your account have been successfully created.</h2></span>';
+                   header("Location: ../Layout/signup_caretaker.php?success=Congratulations! Your account have been successfully created.");  
+                  }
+                 }
+               }
+             }
+                      ?>
+
 <div class="container">
 <div class="row">
         <div class="col-md-6 offset-md-3">
@@ -409,34 +440,7 @@ require('../Layout/config.php');
         }?>
 
                 </form>
-                <?php
-              
-                      if (isset($_POST["email"])){
-                  extract($_POST);
-                  $sql = "SELECT * FROM user WHERE Email = '$email' ";
-                  $ls = mysqli_query($conn, $sql);
-
-                  $error = mysqli_error($conn);
-                  if ($error =="") {
-                      $total = mysqli_num_rows($ls);
-                  if ($total > 0){
-                    echo '<span style="color:red;text-align:center;">This Email is already exist!</span>';
-                  }elseif($password != $confirmpassword){
-                    echo '<span style="color:red;text-align:center;">Password and Confirm password do not match. please enter again!</span>';
-                  }else{
-
-                    $sql = "INSERT INTO user VALUES(NULL,'$fname','$lname','$gender','$dob','$countrycode$phonenumber','$hkid','$email','$password','$pdf', '$description','caretaker','Unapproved',0)";
-                  mysqli_query($conn, $sql);
-                  $error = mysqli_error($conn);
-                  if ($error !=""){
-                    echo $error;
-                  }else{
-                    echo '<span style="color:red;text-align:center;"><h2>Congratulations! Your account have been successfully created.</h2></span>';
-                  }
-                  }
-                  }
-                }
-                      ?>
+                
 
                 <p class="text-center mt-3 text-secondary">If you have account, Please <a href="../Layout/signin.php">Login Now</a></p>
             </div>
