@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1:3306
--- 產生時間： 2022 年 10 月 11 日 17:15
+-- 產生時間： 2022 年 10 月 20 日 04:23
 -- 伺服器版本： 8.0.27
 -- PHP 版本： 7.4.26
 
@@ -20,8 +20,6 @@ SET time_zone = "+00:00";
 --
 -- 資料庫: `fypdb`
 --
-CREATE DATABASE IF NOT EXISTS `fypdb` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci;
-USE `fypdb`;
 
 -- --------------------------------------------------------
 
@@ -43,21 +41,21 @@ CREATE TABLE IF NOT EXISTS `user` (
   `Certificates` mediumblob,
   `Description` varchar(255) DEFAULT NULL,
   `Role` enum('normal','caretaker','admin') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-  `Status` enum('Unapproved','Approved','Banned') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-  `Point` varchar(255) DEFAULT NULL,
+  `Status` varchar(20) DEFAULT NULL,
+  `Point` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT '0',
   PRIMARY KEY (`ID`,`Email`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- 傾印資料表的資料 `user`
 --
 
 INSERT INTO `user` (`ID`, `FName`, `LName`, `Gender`, `DateofBirth`, `Phone`, `HKID`, `Email`, `Password`, `Certificates`, `Description`, `Role`, `Status`, `Point`) VALUES
-(1, 'User', 'User', 'male', '2000-01-01', '85212345678', NULL, 'User@gmail.com', 'Password', NULL, NULL, 'normal', NULL, '50'),
-(2, 'Caretaker', 'Caretaker', 'male', '2000-02-02', '85287654321', 'Y123456A', 'Caretaker@gmail.com', 'Password', NULL, 'I am a caretaker', 'caretaker', 'Approved', NULL),
-(3, NULL, NULL, NULL, NULL, NULL, NULL, 'admin@gmail.com', 'Password', NULL, NULL, 'admin', NULL, NULL);
+(1, 'User', 'User', 'male', '2000-01-01', '85212345678', NULL, 'User@gmail.com', 'Password', NULL, NULL, 'normal', 'Approved', '50'),
+(2, 'Caretaker', 'Caretaker', 'female', '2000-02-02', '85287654321', 'Y123456A', 'Caretaker@gmail.com', 'Password', NULL, 'I am a caretaker', 'caretaker', 'Approved', NULL),
+(3, NULL, 'Admin', 'intersex', NULL, NULL, NULL, 'Admin@gmail.com', 'Password', NULL, NULL, 'admin', 'Approved', NULL);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION.. */;
