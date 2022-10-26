@@ -48,17 +48,7 @@ $ls = mysqli_query($conn, $sql);
                                             ?>
 
 
-<?php
 
-      $sql="SELECT Certificates from user WHERE ID = '$id'";
-      $query=mysqli_query($conn,$sql);
-      while ($info=mysqli_fetch_array($query)) {
-        ?>
-      <embed type="application/pdf" src="pdf/<?php echo $info['Certificates'] ; ?>" width="900" height="500">
-    <?php
-      }
-
-      ?>
 
 
                                 <form action="../Layout/admin_managementedithandle.php" method="POST">

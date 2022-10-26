@@ -54,8 +54,6 @@ $ls = mysqli_query($conn, $sql);
                                 }else{
                                     $point = 1000;
                                 }
-
-
                             $query = "INSERT INTO code VALUES(NULL,$point,'$token')";
                             $query_run = mysqli_query($conn, $query);
 
