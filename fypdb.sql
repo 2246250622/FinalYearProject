@@ -55,6 +55,26 @@ INSERT INTO `user` (`ID`, `FName`, `LName`, `Gender`, `DateofBirth`, `Phone`, `H
 (2, 'Caretaker', 'Caretaker', 'female', '2000-02-02', '85287654321', 'Y123456A', 'Caretaker@gmail.com', 'Password', NULL, 'I am a caretaker', 'caretaker', 'Approved', 0),
 (3, NULL, 'Admin', 'intersex', NULL, NULL, NULL, 'Admin@gmail.com', 'Password', NULL, NULL, 'admin', 'Approved', 0);
 
+DROP TABLE IF EXISTS `chat`;
+CREATE TABLE IF NOT EXISTS `chat` (
+  `ID_Chat` int NOT NULL AUTO_INCREMENT,
+  `FName` varchar(20) DEFAULT NULL,
+  `LName` varchar(20) DEFAULT NULL,
+  `Gender` varchar(10) DEFAULT NULL,
+  `DateofBirth` date DEFAULT NULL,
+  `Phone` char(20) DEFAULT NULL,
+  `HKID` varchar(8) DEFAULT NULL,
+  `Email` varchar(30) NOT NULL,
+  `Password` varchar(20) NOT NULL,
+  `Certificates` mediumblob,
+  `Description` varchar(255) DEFAULT NULL,
+  `Role` enum('normal','caretaker','admin') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `Status` varchar(20) DEFAULT NULL,
+  `Point` int(10)  DEFAULT 0,
+  PRIMARY KEY (`ID`,`Email`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
 
 
 

@@ -1,0 +1,113 @@
+In-home care
+
+
+    What kind of help are you looking for?
+    Household tasks
+    Errands, housekeeping and meal prep.
+
+    Personal care
+    Bathing, dressing and feeding.
+
+    Companionship
+    Sharing hobbies and lending an ear.
+
+    Transportation
+    Trips to appointments and errands.
+
+    Specialized care
+    Memory care, use of special equipment.
+
+    Mobility assistance
+    Lift, transfers, physical activity, etc.
+
+        Where are you looking for care?
+        Hong Kong Island
+        1. Central and Western
+        2. Eastern
+        3. Southern
+        4. Wan Chai
+        Kowloon
+        5. Kowloon City
+        6. Kwun Tong
+        7. Sham Shui Po
+        8. Wong Tai Sin
+        9. Yau Tsim Mong
+        New Territories
+        10. Islands
+        11. Kwai Tsing
+        12. North
+        13. Sai Kung
+        14. Sha Tin
+        15. Tai Po
+        16. Tsuen Wan
+        17. Tuen Mun
+        18. Yuen Long
+
+
+
+
+
+Senior living community
+
+
+    Who needs care?
+    My parent
+    My spouse
+    Myself
+
+
+    How old are they?
+    30’s
+    40's
+    50's
+    60's
+    70's
+    80's
+    90's
+    100's
+
+
+        How would you describe them?
+        Independent
+        Needs monitoring or extra help
+        Requires constant supervision
+
+            What kind of help is your spouse looking for?
+            Everyday tasks
+            Laundry and meal prep.
+
+            Personal care
+            Bathing, dressing and feeding.
+
+            Companionship
+            Sharing hobbies and lending an ear.
+
+            Mobility assistance
+            Lift, transfers, physical activity, etc.
+
+            Memory care
+            Alzheimer’s, dementia or memory care.
+
+
+                Where are you looking for care?
+                Hong Kong Island
+                1. Central and Western
+                2. Eastern
+                3. Southern
+                4. Wan Chai
+                Kowloon
+                5. Kowloon City
+                6. Kwun Tong
+                7. Sham Shui Po
+                8. Wong Tai Sin
+                9. Yau Tsim Mong
+                New Territories
+                10. Islands
+                11. Kwai Tsing
+                12. North
+                13. Sai Kung
+                14. Sha Tin
+                15. Tai Po
+                16. Tsuen Wan
+                17. Tuen Mun
+                18. Yuen Long

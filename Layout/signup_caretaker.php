@@ -76,7 +76,8 @@ require('../Layout/config.php');
         <div class="col-md-6 offset-md-3">
             <div class="signup-form">
                 <form action="<?php echo $_SERVER["PHP_SELF"] ?>" method="post" class="mt-5 border p-4 bg-light shadow">
-                    <h4 class="mb-3 text-secondary">Create Your Account(Caretaker)</h4>
+                    <h4 class="mb-3 text-secondary">Create Your Account(To find a care job)</h4>
+                    <h6 class="mb-3 text-secondary">Create a profile and search for jobs.</h6>
                     <p class=" mt-2 text-secondary">If you want to register as a normal user, Please <a href="../Layout/signup_normaluser.php">Click Here</a></p>
                     
                     <?php if (isset($_GET['error'])) { ?>  <!-- Error red alert box -->
