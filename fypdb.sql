@@ -58,20 +58,23 @@ INSERT INTO `user` (`ID`, `FName`, `LName`, `Gender`, `DateofBirth`, `Phone`, `H
 DROP TABLE IF EXISTS `chat`;
 CREATE TABLE IF NOT EXISTS `chat` (
   `ID_Chat` int NOT NULL AUTO_INCREMENT,
-  `FName` varchar(20) DEFAULT NULL,
-  `LName` varchar(20) DEFAULT NULL,
-  `Gender` varchar(10) DEFAULT NULL,
-  `DateofBirth` date DEFAULT NULL,
-  `Phone` char(20) DEFAULT NULL,
-  `HKID` varchar(8) DEFAULT NULL,
-  `Email` varchar(30) NOT NULL,
-  `Password` varchar(20) NOT NULL,
-  `Certificates` mediumblob,
+  `ID` int NOT NULL,
   `Description` varchar(255) DEFAULT NULL,
-  `Role` enum('normal','caretaker','admin') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-  `Status` varchar(20) DEFAULT NULL,
-  `Point` int(10)  DEFAULT 0,
-  PRIMARY KEY (`ID`,`Email`)
+  PRIMARY KEY (`ID_Chat`),
+  FOREIGN KEY (`ID`) REFERENCES user(`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+DROP TABLE IF EXISTS `question`;
+CREATE TABLE IF NOT EXISTS `question` (
+  `ID_Question` int NOT NULL AUTO_INCREMENT,
+  `ID` int NOT NULL,
+  `type_of_care` varchar(20) DEFAULT NULL,
+  `kind_of_help` varchar(20) DEFAULT NULL,
+  `location` varchar(20) DEFAULT NULL,
+  `how_old` varchar(20) DEFAULT NULL,
+  `describe` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`ID_Question`),
+  FOREIGN KEY (`ID`) REFERENCES user(`ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 
