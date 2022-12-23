@@ -71,13 +71,15 @@ CREATE TABLE IF NOT EXISTS `question` (
   `type_of_care` varchar(20) DEFAULT NULL,
   `kind_of_help` varchar(20) DEFAULT NULL,
   `location` varchar(20) DEFAULT NULL,
+  `who_need_care` varchar(20) DEFAULT NULL,
   `how_old` varchar(20) DEFAULT NULL,
   `describe` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`ID_Question`),
   FOREIGN KEY (`ID`) REFERENCES user(`ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
-
+INSERT INTO `question` (`ID_Question`, `ID`, `type_of_care`, `kind_of_help`, `location`, `who_need_care`, `how_old`, `descriptions`) VALUES
+(NULL,1,'1','2','3','4','5','6');
 
 
 

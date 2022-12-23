@@ -13,107 +13,153 @@
     </head>
     <body class="sb-nav-fixed">
     <?php 
-session_start();
-require('../Layout/config.php');
+    session_start();
+    require('../Layout/config.php');
 
-?>  
+    ?>
+    <?php         
+                
+                  if (isset($_POST["location"])){
+                  extract($_POST);
+                  $id = $_SESSION['ID'];
+                  if(empty($who_need_care)){
+                    $who_need_care="Myself";
+                  }
+
+                  if(empty($how_old)){
+                    $how_old="30-100’s";
+                  }
+
+                  if(empty($describe)){
+                    $describe="NA";
+                  }
+                  $sql = "SELECT * FROM question WHERE ID = '$id' ";
+                  $ls = mysqli_query($conn, $sql);
+
+                  $error = mysqli_error($conn);
+                  if ($error =="") {
+                      $total = mysqli_num_rows($ls);
+                  if ($total > 0){
+                    echo "<script type='text/javascript'>alert('$describe');</script>";
+                    $sql = "UPDATE question SET type_of_care='$type_of_care', kind_of_help='$kind_of_help', location='$location', who_need_care='$who_need_care', how_old='$how_old', descriptions='$describe' WHERE ID ='$id'";
+                }else{
+                  
+                $sql = "INSERT INTO question VALUES(NULL,'$id','$type_of_care','$kind_of_help','$location','$who_need_care','$how_old','$describe')";
+                }
+                  mysqli_query($conn, $sql);
+                  $error = mysqli_error($conn);
+                  if ($error !=""){
+                    echo $error;
+                    echo "<script type='text/javascript'>alert($error);</script>";
+                  }else{
+                    echo "<script type='text/javascript'>alert('OK');</script>";
+                   //header("Location: ../Layout/signup_caretaker.php?success=Congratulations! Your account have been successfully created.");  
+                  }
+                 
+                }
+             }
+                      ?>  
 
        <?php include('../Component/normal_Navbar.php');?>
             </div>
             <div id="layoutSidenav_content">
                 <main>
-                <form action="" method="post">
+                <form action="<?php echo $_SERVER["PHP_SELF"] ?>" method="post">
                     <center>
                         <br><br><br><br><br>
                 <div id="Q1">
                 <h2 class="MuiTypography-root jss62 MuiTypography-h2"><b>What type of care are you interested in?</b></h2><br><br><br>
                 <br><br>
-                <button onclick="Q1(value)"type="button" style="border-radius: 25px;width: 500px" value="In-home care"><h2>In-home care</h2><img src="../img/In-home care.png"></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button onclick="Q1(value)"type="button" style="border-radius: 25px;width: 500px" value="Senior living community"><h2>Senior living community</h2><img src="../img/Senior living community.png"></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button onclick="Q1(value)" type="button" style="border-radius: 25px;width: 500px" value="I am not sure yet"><h2>I am not sure yet</h2><img src="../img/I am not sure yet.png"></button>
+                <input id="type_of_care1" name="type_of_care" onclick="Q1(value)" type="radio" value="In-home care"></input><label for="type_of_care1"><img src="../img/In-home care1.png" style="border-radius: 25px;width: 500px" /></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input id="type_of_care2" name="type_of_care" onclick="Q1(value)" type="radio" value="Senior living community"></input><label for="type_of_care2"><img src="../img/Senior living community1.png" style="border-radius: 25px;width: 500px" /></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input id="type_of_care3" name="type_of_care" onclick="Q1(value)" type="radio" value="I am not sure yet"></input><label for="type_of_care3"><img src="../img/I am not sure yet1.png" style="border-radius: 25px;width: 500px" />
                 </div>
 
                 <div id="Q2" style="display:none">
                 <h2 class="MuiTypography-root jss62 MuiTypography-h2"><b>What kind of help are you looking for?</b></h2><br>
-                <button onclick="Q2(value)"type="button" style="border-radius: 25px;width: 500px" value="Household tasks"><h2>Household tasks</h2><h6>Errands, housekeeping and meal prep.</h6></button><br><br>
-                <button onclick="Q2(value)"type="button" style="border-radius: 25px;width: 500px" value="Personal care"><h2>Personal care</h2><h6>Bathing, dressing and feeding.</h6></button><br><br>
-                <button onclick="Q2(value)"type="button" style="border-radius: 25px;width: 500px" value="Companionship"><h2>Companionship</h2><h6>Sharing hobbies and lending an ear.</h6></button><br><br>
-                <button onclick="Q2(value)"type="button" style="border-radius: 25px;width: 500px" value="Transportation"><h2>Transportation</h2><h6>Trips to appointments and errands.</h6></button><br><br>
-                <button onclick="Q2(value)"type="button" style="border-radius: 25px;width: 500px" value="Specialized care"><h2>Specialized care</h2><h6>Memory care, use of special equipment.</h6></button><br><br>
-                <button onclick="Q2(value)"type="button" style="border-radius: 25px;width: 500px" value="Mobility assistance"><h2>Mobility assistance</h2><h6>Lift, transfers, physical activity, etc.</h6></button>
+                <input id="kind_of_help1" name="kind_of_help" onclick="Q2(value)"type="radio"  value="Household tasks"></input><label for="kind_of_help1"><img src="../img/image_part_001" style="border-radius: 25px;width: 500px" /></label><br><br>
+                <input id="kind_of_help2" name="kind_of_help" onclick="Q2(value)"type="radio"  value="Personal care"></input></input><label for="kind_of_help2"><img src="../img/image_part_002" style="border-radius: 25px;width: 500px" /></label><br><br>
+                <input id="kind_of_help3" name="kind_of_help" onclick="Q2(value)"type="radio"  value="Companionship"></input></input><label for="kind_of_help3"><img src="../img/image_part_003" style="border-radius: 25px;width: 500px" /></label><br><br>
+                <input id="kind_of_help4" name="kind_of_help" onclick="Q2(value)"type="radio"  value="Transportation"></input></input><label for="kind_of_help4"><img src="../img/image_part_004" style="border-radius: 25px;width: 500px" /></label><br><br>
+                <input id="kind_of_help5" name="kind_of_help" onclick="Q2(value)"type="radio"  value="Specialized care"></input></input><label for="kind_of_help5"><img src="../img/image_part_005" style="border-radius: 25px;width: 500px" /></label><br><br>
+                <input id="kind_of_help6" name="kind_of_help" onclick="Q2(value)"type="radio"  value="Mobility assistance"></input></input><label for="kind_of_help6"><img src="../img/image_part_006" style="border-radius: 25px;width: 500px" /></label>
                </div>
 
 
                <div id="Q3" style="display:none;width:500px">
                 <h2 class="MuiTypography-root jss62 MuiTypography-h2"><b>Where are you looking for care?</b></h2><br>
               
-                <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">Open this select menu
+                <select name="location" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">Open this select menu
                 <optgroup label = "Hong Kong Island">
                 <option selected value="Central and Western">Central and Western</option>
-                <option onclick="Q3(value)" value="Eastern">Eastern</option>
-                <option onclick="Q3(value)" value="Southern">Southern</option>
-                <option onclick="Q3(value)" value="Wan Chai">Wan Chai</option>
+                <option  value="Eastern">Eastern</option>
+                <option  value="Southern">Southern</option>
+                <option  value="Wan Chai">Wan Chai</option>
 
                 <optgroup label = "Kowloon">
-                <option onclick="Q3(value)" value="Kowloon City">Kowloon City</option>
-                <option onclick="Q3(value)" value="Kwun Tong">Kwun Tong</option>
-                <option onclick="Q3(value)" value="Sham Shui Po">Sham Shui Po</option>
-                <option onclick="Q3(value)" value="Wong Tai Sin">Wong Tai Sin</option>
-                <option onclick="Q3(value)" value="Yau Tsim Mong">Yau Tsim Mong</option>
+                <option  value="Kowloon City">Kowloon City</option>
+                <option  value="Kwun Tong">Kwun Tong</option>
+                <option  value="Sham Shui Po">Sham Shui Po</option>
+                <option  value="Wong Tai Sin">Wong Tai Sin</option>
+                <option  value="Yau Tsim Mong">Yau Tsim Mong</option>
 
                 <optgroup label = "New Territories">
-                <option onclick="Q3(value)" value="Islands">Islands</option>
-                <option onclick="Q3(value)" value="Kwai Tsing">Kwai Tsing</option>
-                <option onclick="Q3(value)" value="North">North</option>
-                <option onclick="Q3(value)" value="Sai Kung">Sai Kung</option>
-                <option onclick="Q3(value)" value="Sha Tin">Sha Tin</option>
-                <option onclick="Q3(value)" value="Tai Po">Tai Po</option>
-                <option onclick="Q3(value)" value="Tsuen Wan">Tsuen Wan</option>
-                <option onclick="Q3(value)" value="Tuen Mun">Tuen Mun</option>
-                <option onclick="Q3(value)" value="Yuen Long">Yuen Long</option>
+                <option  value="Islands">Islands</option>
+                <option  value="Kwai Tsing">Kwai Tsing</option>
+                <option  value="North">North</option>
+                <option  value="Sai Kung">Sai Kung</option>
+                <option  value="Sha Tin">Sha Tin</option>
+                <option  value="Tai Po">Tai Po</option>
+                <option  value="Tsuen Wan">Tsuen Wan</option>
+                <option  value="Tuen Mun">Tuen Mun</option>
+                <option  value="Yuen Long">Yuen Long</option>
                 </select>
-                <input type="submit">
+                <button type="submit" class="btn btn-primary float-end" id="submit">Submit</button>
                 </div>
 
                 <div id="Q4" style="display:none">
-                <h2 class="MuiTypography-root jss62 MuiTypography-h2"><b>What type of care are you interested in?</b></h2><br><br><br>
+                <h2 class="MuiTypography-root jss62 MuiTypography-h2"><b>Who needs care?</b></h2><br><br><br>
                 <br><br>
-                <button onclick="Q4(value)"type="button" style="border-radius: 25px;width: 500px" value="My parent"><h2>My parent</h2><img src="../img/My parent.png"></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button onclick="Q4(value)"type="button" style="border-radius: 25px;width: 500px" value="My spouse"><h2>My spouse</h2><img src="../img/My spouse.png"></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button onclick="Q4(value)" type="button" style="border-radius: 25px;width: 500px" value="Myself"><h2>Myself</h2><img src="../img/Myself.png"></button>
+                <input id="who_need_care1" name="who_need_care" onclick="Q4(value)"type="radio" value="My parent"></input><label for="who_need_care1"><img src="../img/My parent.jpg" style="border-radius: 25px;width: 500px" /></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input id="who_need_care2" name="who_need_care" onclick="Q4(value)"type="radio" value="My spouse"></input><label for="who_need_care2"><img src="../img/My spouse.jpg" style="border-radius: 25px;width: 500px" /></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input id="who_need_care3" name="who_need_care" onclick="Q4(value)" type="radio" value="Myself"></input><label for="who_need_care3"><img src="../img/Myself.jpg" style="border-radius: 25px;width: 500px" /></label>
                 </div>
 
                 <div id="Q5" style="display:none">
                 <h2 class="MuiTypography-root jss62 MuiTypography-h2"><b>How old are they?</b></h2><br>
-                <button onclick="Q5(value)"type="button" style="border-radius: 25px;width: 500px" value="30’s"><h1>30’s</h1></button><br><br>
-                <button onclick="Q5(value)"type="button" style="border-radius: 25px;width: 500px" value="40’s"><h1>40’s</h1></button><br><br>
-                <button onclick="Q5(value)"type="button" style="border-radius: 25px;width: 500px" value="50’s"><h1>50’s</h1></button><br><br>
-                <button onclick="Q5(value)"type="button" style="border-radius: 25px;width: 500px" value="60’s"><h1>60’s</h1></button><br><br>
-                <button onclick="Q5(value)"type="button" style="border-radius: 25px;width: 500px" value="70’s"><h1>70’s</h1></button><br><br>
-                <button onclick="Q5(value)"type="button" style="border-radius: 25px;width: 500px" value="80’s"><h1>80’s</h1></button><br><br>
-                <button onclick="Q5(value)"type="button" style="border-radius: 25px;width: 500px" value="90’s"><h1>90’s</h1></button><br><br>
-                <button onclick="Q5(value)"type="button" style="border-radius: 25px;width: 500px" value="100’s"><h1>100’s</h1></button><br><br>
+                <input id="how_old1" name="how_old" onclick="Q5(value)"type="radio" value="30’s"></input><label for="how_old1"><img src="../img/30.jpg" style="border-radius: 25px;width: 500px" /></label><br><br>
+                <input id="how_old2" name="how_old" onclick="Q5(value)"type="radio" value="40’s"></input><label for="how_old2"><img src="../img/40.jpg" style="border-radius: 25px;width: 500px" /></label><br><br>
+                <input id="how_old3" name="how_old" onclick="Q5(value)"type="radio" value="50’s"></input><label for="how_old3"><img src="../img/50.jpg" style="border-radius: 25px;width: 500px" /></label><br><br>
+                <input id="how_old4" name="how_old" onclick="Q5(value)"type="radio" value="60’s"></input><label for="how_old4"><img src="../img/60.jpg" style="border-radius: 25px;width: 500px" /></label><br><br>
+                <input id="how_old5" name="how_old" onclick="Q5(value)"type="radio" value="70’s"></input><label for="how_old5"><img src="../img/70.jpg" style="border-radius: 25px;width: 500px" /></label><br><br>
+                <input id="how_old6" name="how_old" onclick="Q5(value)"type="radio" value="80’s"></input><label for="how_old6"><img src="../img/80.jpg" style="border-radius: 25px;width: 500px" /></label><br><br>
+                <input id="how_old7" name="how_old" onclick="Q5(value)"type="radio" value="90’s"></input><label for="how_old7"><img src="../img/90.jpg" style="border-radius: 25px;width: 500px" /></label><br><br>
+                <input id="how_old8" name="how_old" onclick="Q5(value)"type="radio" value="100’s"></input><label for="how_old8"><img src="../img/100.jpg" style="border-radius: 25px;width: 500px" /></label><br><br>
                </div>
 
 
                <div id="Q6" style="display:none">
                 <h2 class="MuiTypography-root jss62 MuiTypography-h2"><b>How would you describe them?</b></h2><br>
-                <button onclick="Q6(value)"type="button" style="border-radius: 25px;width: 500px" value="Independent"><h1>Independent</h1></button><br><br>
-                <button onclick="Q6(value)"type="button" style="border-radius: 25px;width: 500px" value="Needs monitoring or extra help"><h1>Needs monitoring or extra help</h1></button><br><br>
-                <button onclick="Q6(value)"type="button" style="border-radius: 25px;width: 500px" value="Requires constant supervision"><h1>Requires constant supervision</h1></button><br><br>
+                <input id="describe1" name="describe" onclick="Q6(value)"type="radio" value="Independent"></input><label for="describe1"><img src="../img/independent.jpg" style="border-radius: 25px;width: 500px" /></label><br><br>
+                <input id="describe2" name="describe" onclick="Q6(value)"type="radio" value="Needs monitoring or extra help"></input><label for="describe2"><img src="../img/needs monitoring or extra help.jpg" style="border-radius: 25px;width: 500px" /></label><br><br>
+                <input id="describe3" name="describe" onclick="Q6(value)"type="radio" value="Requires constant supervision"></input><label for="describe3"><img src="../img/requires contant supervision.jpg" style="border-radius: 25px;width: 500px" /></label><br><br>
                </div>
 
                <div id="Q7" style="display:none">
-                <h2 class="MuiTypography-root jss62 MuiTypography-h2"><b>What kind of help is your spouse looking for?</b></h2><br>
-                <button onclick="Q7(value)"type="button" style="border-radius: 25px;width: 500px" value="Everyday tasks"><h2>Everyday tasks</h2><h6>Laundry and meal prep.</h6></button><br><br>
-                <button onclick="Q7(value)"type="button" style="border-radius: 25px;width: 500px" value="Personal care"><h2>Personal care</h2><h6>Bathing, dressing and feeding.</h6></button><br><br>
-                <button onclick="Q7(value)"type="button" style="border-radius: 25px;width: 500px" value="Companionship"><h2>Companionship</h2><h6>Sharing hobbies and lending an ear.</h6></button><br><br>
-                <button onclick="Q7(value)"type="button" style="border-radius: 25px;width: 500px" value="Mobility assistance"><h2>Mobility assistance</h2><h6>Lift, transfers, physical activity, etc.</h6></button><br><br>
-                <button onclick="Q7(value)"type="button" style="border-radius: 25px;width: 500px" value="Memory care"><h2>Memory care</h2><h6>Alzheimer’s, dementia or memory care.</h6></button><br><br>
+                <h2 class="MuiTypography-root jss62 MuiTypography-h2"><b>What kind of help that he/she is looking for?</b></h2><br>
+                <input id="kind_of_help7" name="kind_of_help" onclick="Q7(value)"type="radio" value="Everyday tasks"></input><label for="kind_of_help7"><img src="../img/Everyday tasks.jpg" style="border-radius: 25px;width: 500px" /></label><br><br>
+                <input id="kind_of_help8" name="kind_of_help" onclick="Q7(value)"type="radio" value="Personal care"></input><label for="kind_of_help8"><img src="../img/Personal care.jpg" style="border-radius: 25px;width: 500px" /></label><br><br>
+                <input id="kind_of_help9" name="kind_of_help" onclick="Q7(value)"type="radio" value="Companionship"></input><label for="kind_of_help9"><img src="../img/Companionship.jpg" style="border-radius: 25px;width: 500px" /></label><br><br>
+                <input id="kind_of_help10" name="kind_of_help" onclick="Q7(value)"type="radio" value="Mobility assistance"></input><label for="kind_of_help10"><img src="../img/Mobility assistance.jpg" style="border-radius: 25px;width: 500px" /></label><br><br>
+                <input id="kind_of_help11" name="kind_of_help" onclick="Q7(value)"type="radio" value="Memory care"></input><label for="kind_of_help11"><img src="../img/Memory care.jpg" style="border-radius: 25px;width: 500px" /></label><br><br>
                 </div>
                 
                 
-               
+                <?php if (isset($_GET['error'])) { ?>  <!-- Error red alert box -->
+                          <div class="alert alert-danger" role="alert">
+                      <?=$_GET['error']?>
+                    </div>
+                    <?php } ?>    
  
 
 
@@ -173,7 +219,7 @@ function Q2(value) {
 
 function Q3(value) {
     Where = value;
-    document.getElementById("Q3").style.display = "none";  
+    
 }
 
 function Q4(value) {
