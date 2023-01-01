@@ -74,17 +74,17 @@ include('../Component/Navbar.php');
           <div class="row">
             <div class="col-lg-6 align-self-center">
               <div class="left-content header-text wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1s">
-                <h6>Welcome to CareHK</h6>
-                <h2>Find trusted <em>Caretaker</em> &amp; <span>Services</span> for your every need</h2>
-                <p>CareHK is an online marketplace where families looking for care can connect with caregivers.</p>
+                <h6>欢迎来到CareHK</h6>
+                <h2>寻找值得信赖的 <em>护理员</em>和<span>服务</span>去满足您的各种需求</h2>
+                <p>CareHK是一个在线市场，寻找护理的家庭可以与护理人员联系。</p>
                 <div class="btn-group" role="group" aria-label="Basic example">
-                  <button onclick="location.href='../Layout/index';" type="button" class="btn btn-secondary">Eng</button>
+                <button onclick="location.href='../Layout/index';" type="button" class="btn btn-secondary">Eng</button>
                   <button onclick="location.href='../Layout/index_traditional.php';" type="button" class="btn btn-secondary">繁</button>
                   <button onclick="location.href='../Layout/index_simplified.php';" type="button" class="btn btn-secondary">简</button>
                 </div>
                 <form id="search" action="#" method="GET">
                   <fieldset>
-                  <a class="btn btn-danger" href="../Layout/signup_normaluser.php" role="button">Register to be our member</a>
+                  <a class="btn btn-danger" href="../Layout/signup_normaluser.php" role="button">注册成为我们的会员</a>
                   </fieldset>
                 </form>
 
@@ -118,8 +118,8 @@ include('../Component/Navbar.php');
                     <img src="../assets/images/service-icon-01.png" alt="reporting">
                   </div>
                   <div class="right-text">
-                    <h4>Technology</h4>
-                    <p>We’re using technology and innovation to solve one of the greatest human challenges.</p>
+                    <h4>技术</h4>
+                    <p>我们正在利用技术和创新来解决人类最大的挑战之一。</p>
                   </div>
                 </div>
               </div>
@@ -129,8 +129,8 @@ include('../Component/Navbar.php');
                     <img src="../assets/images/service-icon-02.png" alt="">
                   </div>
                   <div class="right-text">
-                    <h4>Strategy</h4>
-                    <p>We’re at the forefront of safety, advocacy and thought leadership.</p>
+                    <h4>战略</h4>
+                    <p>我们处于安全、宣传和思想领导的最前沿。</p>
                   </div>
                 </div>
               </div>
@@ -140,8 +140,8 @@ include('../Component/Navbar.php');
                     <img src="../assets/images/service-icon-03.png" alt="">
                   </div>
                   <div class="right-text">
-                    <h4>Demand</h4>
-                    <p>We’re obsessively attuned to our customers’ needs because we ARE our customer.</p>
+                    <h4>需求</h4>
+                    <p>我们执着地关注客户的需求，因为我们就是我们的客户。</p>
                   </div>
                 </div>
               </div>
@@ -151,8 +151,8 @@ include('../Component/Navbar.php');
                     <img src="../assets/images/service-icon-04.png" alt="">
                   </div>
                   <div class="right-text">
-                    <h4>Fairness</h4>
-                    <p>We’re devoted to families of all types and backgrounds because we ARE families of all types and backgrounds.</p>
+                    <h4>公平性</h4>
+                    <p>我们致力于所有类型和背景的家庭，因为我们就是所有类型和背景的家庭。</p>
                   </div>
                 </div>
               </div>
@@ -173,13 +173,13 @@ include('../Component/Navbar.php');
         </div>
         <div class="col-lg-6 wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.2s">
           <div class="section-heading">
-            <h2>Grow community with <em>CareHK </em><span>service</span></h2>
-            <p>Caregiving can make a world of difference in someone’s life, so it’s important to have the tools you need to best care for them. We ensure our Caregivers have the proper training and support to enrich the lives of their loved ones and clients. We know how important it is to make sure your loved one is properly cared for, so at CareHK, we offer a variety of benefits to help you make caregiving your primary focus.</p>
+            <h2>增长社区与<em>CareHK </em><span>服务</span></h2>
+            <p>护理工作可以使一个人的生活发生很大的变化，所以拥有最好的护理工具是很重要的。我们确保我们的护理人员有适当的培训和支持，以丰富他们的亲人和客户的生活。我们知道确保你的亲人得到适当的照顾是多么重要，所以在香港关怀协会，我们提供各种福利，帮助你把护理工作作为你的首要任务。</p>
           </div>
           <div class="row">
             <div class="col-lg-12">
               <div class="first-bar progress-skill-bar">
-                <h4>Proportion of carers seeking work on our platform</h4>
+                <h4>在我们的平台上寻找工作的护理人员的比例</h4>
                 <span>84%</span>
                 <div class="filled-bar"></div>
                 <div class="full-bar"></div>
@@ -187,7 +187,7 @@ include('../Component/Navbar.php');
             </div>
             <div class="col-lg-12">
               <div class="second-bar progress-skill-bar">
-                <h4>Proportion of elderly who think we can solve their problems</h4>
+                <h4>认为我们能解决他们问题的老人比例</h4>
                 <span>88%</span>
                 <div class="filled-bar"></div>
                 <div class="full-bar"></div>
@@ -195,7 +195,7 @@ include('../Component/Navbar.php');
             </div>
             <div class="col-lg-12">
               <div class="third-bar progress-skill-bar">
-                <h4>Proportion of elderly people satisfied with our services</h4>
+                <h4>对我们的服务感到满意的老人比例</h4>
                 <span>94%</span>
                 <div class="filled-bar"></div>
                 <div class="full-bar"></div>
@@ -212,7 +212,7 @@ include('../Component/Navbar.php');
       <div class="row">
         <div class="col-lg-6 offset-lg-3">
           <div class="section-heading  wow bounceIn" data-wow-duration="1s" data-wow-delay="0.2s">
-            <h2><em>4 Benefits</em> of Caring for a <span>Elderly</span></h2>
+            <h2><em>照顾老人</em> 的 <span>4个好处</span></h2>
           </div>
         </div>
       </div>
@@ -221,8 +221,8 @@ include('../Component/Navbar.php');
           <a href="#">
             <div class="item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.3s">
               <div class="hidden-content">
-                <h4>They’re Receiving the Care They Need</h4>
-                <p>A caregiver for your elderly is you guarantee they’re getting the care they need.</p>
+                <h4>他们正在接受他们需要的护理</h4>
+                <p>为您的老人提供护理人员是您保证他们得到他们需要的照顾。</p>
               </div>
               <div class="showed-content">
                 <img src="../assets/images/portfolio-image.png" alt="">
@@ -234,8 +234,8 @@ include('../Component/Navbar.php');
           <a href="#">
             <div class="item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.4s">
               <div class="hidden-content">
-                <h4>It Strengthens Your Bond</h4>
-                <p>Caregiving is a highly personal job, and undoubtedly you will build a closer relationship with your loved one than you’d ever imagine.</p>
+                <h4>它加强了你们的联系</h4>
+                <p>护理工作是一项高度个人化的工作，毫无疑问，你将与你的亲人建立比你想象中更密切的关系。</p>
               </div>
               <div class="showed-content">
                 <img src="../assets/images/portfolio-image.png" alt="">
@@ -247,8 +247,8 @@ include('../Component/Navbar.php');
           <a href="#">
             <div class="item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.5s">
               <div class="hidden-content">
-                <h4>Learn to Focus</h4>
-                <p>When you care for a loved one so closely, you’ll gain a greater perspective of life and the things that matter.</p>
+                <h4>学会专注</h4>
+                <p>当你如此密切地照顾一个亲人时，你将获得对生活和重要事物的更大视角。</p>
               </div>
               <div class="showed-content">
                 <img src="../assets/images/portfolio-image.png" alt="">
@@ -260,8 +260,8 @@ include('../Component/Navbar.php');
           <a href="#">
             <div class="item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.6s">
               <div class="hidden-content">
-                <h4>You See What Care You May Need in the Future</h4>
-                <p>One last benefit of becoming a caregiver is it offers a unique perspective into your future.</p>
+                <h4>你看到你未来可能需要的护理</h4>
+                <p>成为护理员的最后一个好处是它为你的未来提供了一个独特的视角。</p>
               </div>
               <div class="showed-content">
                 <img src="../assets/images/portfolio-image.png" alt="">
@@ -278,7 +278,7 @@ include('../Component/Navbar.php');
       <div class="row">
         <div class="col-lg-6 wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.25s">
           <div class="section-heading">
-            <h2>Check Out What Is <em>Trending</em> In Our Latest <span>News Coverage</span></h2>
+            <h2>查看什么是 <em>趋势</em> 在我们最新的 <span>新闻报道</span></h2>
           </div>
         </div>
         <div class="col-lg-6 wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.25s">
@@ -296,12 +296,12 @@ include('../Component/Navbar.php');
                 <ul>
                   <li><i class="fa fa-calendar"></i> 24 Mar 2022</li>
                   <li><i class="fa fa-users"></i> CareHK</li>
-                  <li><i class="fa fa-folder"></i> Local</li>
+                  <li><i class="fa fa-folder"></i> 本地</li>
                 </ul>
-                <a href="https://www.forbes.com/sites/tracybrower/2022/11/22/the-talent-shortage-and-the-caregiving-crisis-surprising-ways-employers-can-solve-both/"><h4>The Talent Shortage And The Caregiving Crisis: Surprising Ways Employers Can Solve Both</h4></a>
-                <p>Layoffs are grabbing the headlines lately, but there is still a shortage of workers in a tremendous number of jobs...</p>
+                <a href="https://www.forbes.com/sites/tracybrower/2022/11/22/the-talent-shortage-and-the-caregiving-crisis-surprising-ways-employers-can-solve-both/"><h4>人才短缺和护理危机。雇主可以解决这两个问题的令人惊讶的方法</h4></a>
+                <p>裁员是最近的头条新闻，但仍有大量的工作缺乏工人...</p>
                 <div class="main-blue-button">
-                  <a href="https://www.forbes.com/sites/tracybrower/2022/11/22/the-talent-shortage-and-the-caregiving-crisis-surprising-ways-employers-can-solve-both/">Discover More</a>
+                  <a href="https://www.forbes.com/sites/tracybrower/2022/11/22/the-talent-shortage-and-the-caregiving-crisis-surprising-ways-employers-can-solve-both/">发现更多</a>
                 </div>
               </div>
             </div>
@@ -313,8 +313,8 @@ include('../Component/Navbar.php');
               <li>
                 <div class="left-content align-self-center">
                   <span><i class="fa fa-calendar"></i> 18 Mar 2022</span>
-                  <a href="https://www.hrdive.com/news/remote-work-levels-the-playing-field-for-caregivers/636833/"><h4>Remote work levels the playing field for caregivers, survey finds</h4></a>
-                  <p>As some companies require workers to return to the office, including big names like Twitter...</p>
+                  <a href="https://www.hrdive.com/news/remote-work-levels-the-playing-field-for-caregivers/636833/"><h4>调查发现，远程工作为护理人员提供了公平的竞争环境</h4></a>
+                  <p>由于一些公司要求工人返回办公室，包括像Twitter这样的大公司...</p>
                 </div>
                 <div class="right-image">
                   <a href="https://www.hrdive.com/news/remote-work-levels-the-playing-field-for-caregivers/636833/"><img src="../assets/images/blog-thumb-01.jpg" alt=""></a>
@@ -323,8 +323,8 @@ include('../Component/Navbar.php');
               <li>
                 <div class="left-content align-self-center">
                   <span><i class="fa fa-calendar"></i> 14 Mar 2022</span>
-                  <a href="https://www.businessinsider.com/nanny-nantucket-nashville-toddler-wealthy-family-private-jet-2022-11"><h4>I’m a 23-year-old nanny for a wealthy family in Nantucket. I get to fly on private jets and document my daily adventures on TikTok.</h4></a>
-                  <p>This as-told-to essay is based on a conversation with Evellyn Singleton...</p>
+                  <a href="https://www.businessinsider.com/nanny-nantucket-nashville-toddler-wealthy-family-private-jet-2022-11"><h4>我是一个23岁的保姆，为楠塔基特的一个富裕家庭工作。我可以乘坐私人飞机，在TikTok上记录我的日常冒险...</h4></a>
+                  <p>这篇文章是根据与Evellyn Singleton的谈话写的...</p>
                 </div>
                 <div class="right-image">
                   <a href="https://www.businessinsider.com/nanny-nantucket-nashville-toddler-wealthy-family-private-jet-2022-11"><img src="../assets/images/blog-thumb-02.jpg" alt=""></a>
@@ -333,8 +333,8 @@ include('../Component/Navbar.php');
               <li>
                 <div class="left-content align-self-center">
                   <span><i class="fa fa-calendar"></i> 06 Mar 2022</span>
-                  <a href="https://finance.yahoo.com/news/money-maternity-leave-220500479.html"><h4>How to Make Money on Maternity Leave</h4></a>
-                  <p>Bringing home your new child is a stressful and challenging time, especially if — like most of us — you're not a millionaire...</p>
+                  <a href="https://finance.yahoo.com/news/money-maternity-leave-220500479.html"><h4>如何在产假期间挣钱</h4></a>
+                  <p>将新的孩子带回家是一个充满压力和挑战的时刻，特别是如果--像我们大多数人一样--你不是一个百万富翁...</p>
                 </div>
                 <div class="right-image">
                   <a href="https://finance.yahoo.com/news/money-maternity-leave-220500479.html"><img src="../assets/images/blog-thumb-03.jpg" alt=""></a>
@@ -352,8 +352,8 @@ include('../Component/Navbar.php');
       <div class="row">
         <div class="col-lg-6 align-self-center wow fadeInLeft" data-wow-duration="0.5s" data-wow-delay="0.25s">
           <div class="section-heading">
-            <h2>Feel Free To Send Us a Message About Your  Needs</h2>
-            <p>Caregivers are an important part of a patient's recovery journey</p>
+            <h2>请随时给我们留言，介绍您的需求</h2>
+            <p>护理人员是病人康复过程中的一个重要部分</p>
             <div class="phone-info">
               <h4>For any enquiry, Call Us: <span><i class="fa fa-phone"></i> <a href="#">852-1234 5678</a></span></h4>
             </div>
@@ -384,7 +384,7 @@ include('../Component/Navbar.php');
               </div>
               <div class="col-lg-12">
                 <fieldset>
-                  <button type="submit" id="form-submit" class="main-button ">Send Message</button>
+                  <button type="submit" id="form-submit" class="main-button ">发送信息</button>
                 </fieldset>
               </div>
             </div>

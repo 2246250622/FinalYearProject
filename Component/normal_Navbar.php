@@ -33,9 +33,12 @@
     <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
         <div class="sb-sidenav-menu">
             <div class="nav">
-                
                 <div class="sb-sidenav-menu-heading">Core Pages</div>
                 <a class="nav-link" href="../Layout/user_homepage.php">
+                    <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                    Home Page 
+                </a>
+                <a class="nav-link" href="../Layout/user_findcare.php">
                     <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                     Find Care 
                 </a>
