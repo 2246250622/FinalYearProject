@@ -27,10 +27,10 @@ var onlineInquiry = `
                         </div>
 
                         <div class="answerbtn-group" >
-                        <button id="ctacAsk" class="btn chatBtn">create account</button>
-                        <button id="searchAsk" class="btn chatBtn">find property</button>
-                        <button id="mkappAsk" class="btn chatBtn">make appointment</button>
-                        <button id="chatBtn" class="btn chatBtn">online chat</button>
+                        <button id="ctacAsk" class="btn chatBtn">What's CareHK</button>
+                        <button id="searchAsk" class="btn chatBtn">Reset password</button>
+                        <button id="mkappAsk" class="btn chatBtn">Contact US</button>
+                        <button id="chatBtn" class="btn chatBtn">Online Chat</button>
                         </div>
                         `
                     
@@ -46,37 +46,42 @@ function appendAnswer(x){
     currentHours = ("0" + currentHours).slice(-2);
     if(x == 1){
         target.append(`        <div class="user-reply" id="reply1">
-        <p>How to create an account.
+        <p>What is CareHK and how does it work?
           <br/><span class="reply-time">` + currentHours + `:` + currentMins + `</span></p>
       </div>`);
       setTimeout(function() {
         target.append(`        <div class="reply-content">
         <span class="reply-icon" style="margin-right:0.5rem"><i class="fas fa-robot"></i></span>
-        <p>You can create an account <br/>from <a href="./signin.html" class="chat-link">here</a>
+        
+        <p><br>CareHK is an online marketplace where families looking for care can connect with caregivers.
+        <br> <br>
+        We provide a comprehensive self-service solution for your family care needs!
+        <br>
+       
           <br/><span class="reply-time">`+ currentHours + ":" + currentMins + `</span></p>
       </div>`);
         }, 500);
     } else if(x == 2){
         target.append(`<div class="user-reply" id="reply2">
-        <p>How to search property.
+        <p>How to reset password?
           <br/><span class="reply-time">`+ currentHours + ":" + currentMins +`</span></p>
         </div>`);
         setTimeout(function() {
             target.append(`<div class="reply-content">
             <span class="reply-icon" style="margin-right:0.5rem"><i class="fas fa-robot"></i></span>
-            <p>We provided search estate function, and you can search estate by district, name, price and square.
+            <p><br>The "My Profile" screen lets you view your account details, choose the default view that appears when you log on, change your password and more.
               <br/><span class="reply-time">`+ currentHours + ":" + currentMins + `</span></p>
           </div>`);
             }, 500);
     } else if(x == 3){
         target.append(`<div class="user-reply" id="reply3">
-        <p>How to make an appointment.
+        <p>How to contact CareHK team?
           <br/><span class="reply-time">`+ currentHours + ":" + currentMins + `</span></p>
       </div>`);
         setTimeout(function() {
             target.append(`<div class="reply-content">
           <span class="reply-icon" style="margin-right:0.5rem"><i class="fas fa-robot"></i></span>
-          <p>After choosing a suitable property and wants to have a look, you can make an appointment with thecorresponding property agent.
+          <p><br>Need more help? <br><br>You can email to Mr.Cheuk at "21237387@life.hkbu.edu.hk" or <br>click <a href="mailto: 21237387@life.hkbu.edu.hk" class="chat-link">HERE</a>
               <br/><span class="reply-time">`+ currentHours + ":" + currentMins + `</span></p>
           </div>`);
             }, 500);

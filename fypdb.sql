@@ -51,18 +51,33 @@ CREATE TABLE IF NOT EXISTS `user` (
 --
 
 INSERT INTO `user` (`ID`, `FName`, `LName`, `Gender`, `DateofBirth`, `Phone`, `HKID`, `Email`, `Password`, `Certificates`, `Description`, `Role`, `Status`, `Point`) VALUES
-(1, 'User', 'User', 'male', '2000-01-01', '85212345678', NULL, 'User@gmail.com', 'Password', NULL, NULL, 'normal', 'Approved', 50),
+(1, 'User', 'User', 'male', '2000-01-01', '85212345678', "Y222222A", 'User@gmail.com', 'Password', NULL, NULL, 'normal', 'Approved', 5000),
 (2, 'Caretaker', 'Caretaker', 'female', '2000-02-02', '85287654321', 'Y123456A', 'Caretaker@gmail.com', 'Password', NULL, 'I am a caretaker', 'caretaker', 'Approved', 0),
-(3, NULL, 'Admin', 'intersex', NULL, NULL, NULL, 'Admin@gmail.com', 'Password', NULL, NULL, 'admin', 'Approved', 0);
+(3, NULL, 'Admin', 'intersex', NULL, NULL, "Y111111A", 'Admin@gmail.com', 'Password', NULL, NULL, 'admin', 'Approved', 0);
+
+DROP TABLE IF EXISTS `conversation`;
+CREATE TABLE `conversation` (
+  `ID_Conversation` int(11) NOT NULL AUTO_INCREMENT,
+  `user_1` int(11) NOT NULL,
+  `user_2` int(11) NOT NULL,
+  PRIMARY KEY (`ID_Conversation`),
+  FOREIGN KEY (`user_1`) REFERENCES user(`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 
 DROP TABLE IF EXISTS `chat`;
-CREATE TABLE IF NOT EXISTS `chat` (
-  `ID_Chat` int NOT NULL AUTO_INCREMENT,
-  `ID` int NOT NULL,
-  `Description` varchar(255) DEFAULT NULL,
+CREATE TABLE `chat` (
+  `ID_Chat` int(11) NOT NULL AUTO_INCREMENT,
+  `ID_From` int(11) NOT NULL,
+  `ID_To` int(11) NOT NULL,
+  `message` text NOT NULL,
+  `opened` tinyint(1) NOT NULL DEFAULT 0,
+  `created_at` datetime NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`ID_Chat`),
-  FOREIGN KEY (`ID`) REFERENCES user(`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  FOREIGN KEY (`ID_From`) REFERENCES conversation(`user_1`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
 
 DROP TABLE IF EXISTS `question`;
 CREATE TABLE IF NOT EXISTS `question` (
@@ -78,7 +93,7 @@ CREATE TABLE IF NOT EXISTS `question` (
   FOREIGN KEY (`ID`) REFERENCES user(`ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
-INSERT INTO `question` (`ID_Question`, `ID`, `type_of_care`, `kind_of_help`, `location`, `who_need_care`, `how_old`, `descriptions`) VALUES
+INSERT INTO `question` (`ID_Question`, `ID`, `type_of_care`, `kind_of_help`, `location`, `who_need_care`, `how_old`, `describe`) VALUES
 (NULL,1,'1','2','3','4','5','6');
 
 

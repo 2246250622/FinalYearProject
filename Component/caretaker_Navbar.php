@@ -8,7 +8,7 @@
 </header>
 <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
 <!-- Navbar Brand-->
-<a class="navbar-brand ps-3" href="user_homepage.php">CareHK</a>
+<a class="navbar-brand ps-3" href="caretaker_homepage.php">CareHK</a>
 <!-- Sidebar Toggle-->
 <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
 <!-- Navbar Search-->
@@ -35,29 +35,15 @@
             <div class="nav">
                 
                 <div class="sb-sidenav-menu-heading">Core Pages</div>
-                <a class="nav-link" href="../Layout/user_homepage.php">
+                <a class="nav-link" href="../Layout/caretaker_homepage.php">
                     <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                    Find Care 
+                    Home Page 
                 </a>
-                <a class="nav-link" href="../Layout/user_profile.php">
+                <a class="nav-link" href="../Layout/caretaker_profile.php">
                     <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                     My Profile
                 </a>
-                <a class="nav-link" href="../Layout/admin_managementcode.php">
-                    <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                    Chat
-                </a>
-
-                </a>
-                <a class="nav-link" href="../Layout/user_gift.php">
-                    <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                    Redeem
-                </a>
-
-                <a class="nav-link" href="../Layout/user_buythepoint.php">
-                    <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                    Buy the Point
-                </a>
+                
                
             </div>
         </div>
