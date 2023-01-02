@@ -43,6 +43,11 @@
                     <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                     My Profile
                 </a>
+
+                <a class="nav-link" href="../Layout/caretaker_chat.php">
+                    <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                    Chat
+                </a>
                 
                
             </div>

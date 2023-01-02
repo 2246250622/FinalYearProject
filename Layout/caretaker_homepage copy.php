@@ -25,56 +25,10 @@
     <?php 
     session_start();
     require('../Layout/config.php');
-    $sql="select * from user where Email = '".$_SESSION['Email']."'";
-    $result=mysqli_query($conn, $sql);
-    $error = mysqli_error($conn);
-    
-    if ($error !=""){
-      echo $error;
-    }else{
-    
-    while($row= mysqli_fetch_array($result))	
-    {
+
     ?>
 
-<br><br><br><br><br><br><br><br>
-<main style="margin-left:320px;">
-    <h1>Welcome! <b><u>Mr/Ms <?php echo $row['LName']; ?></u></b></h1>
-    <p class="fs-5 col-md-8">“Too often we underestimate the power of a touch, a smile, a kind word, a listening ear, an honest compliment, or the smallest act of caring, all of which have the potential to turn a life around.” — <b>Leo Buscaglia, author</b> <br><b style="color:red;font-size:40px;"> Therefore, we are here for you.</b></p>
 
-
-    <hr class="col-3 col-md-2 mb-5">
-
-    <div class="row g-5">
-      <div class="col-md-6">
-        <ul class="icon-list">
-          <li class="text-muted">Searching caregiver profiles and limiting the results to specific requirements.</li>
-          <li class="text-muted">Posting Jobs with your care needs and requirements so interested caregivers can apply.</li>
-          <li class="text-muted">Send direct messages to potential candidates</li>
-          <li class="text-muted">Run additional background checks</li>
-          <li class="text-muted">Access recommendations from previous families</li>
-          <li class="text-muted">Pay caregivers you’ve hired securely</li>
-        </ul>
-      </div>
-
-      
-    </div>
-  </main>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<?php }}?>
 
 <button class="btn chatBtn chatToggle" id="chatToggle" style="background-color:#f44336;">Online Chat<i class="far fa-comment-alt" style="margin-left: 1rem"></i></button>
     <div class="chatbox">
@@ -166,7 +120,7 @@ $(document).ready(function() {
 
 
    
-       <?php include('../Component/normal_Navbar.php');?>
+       <?php include('../Component/caretaker_Navbar.php');?>
             </div>
             <div id="layoutSidenav_content">
                 <main>
