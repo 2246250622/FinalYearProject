@@ -39,10 +39,24 @@
                     <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                     Home Page 
                 </a>
+
+                <a class="nav-link" href="../Layout/caretaker_findjob.php">
+                    <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                    Find Jobs
+                </a>
+                
+
+
                 <a class="nav-link" href="../Layout/caretaker_profile.php">
                     <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                     My Profile
                 </a>
+
+                <a class="nav-link" href="../Layout/caretaker_myjob.php">
+                    <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                    My Jobs
+                </a>
+
 
                 <a class="nav-link" href="../Layout/caretaker_chat.php">
                     <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>

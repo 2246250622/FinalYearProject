@@ -46,9 +46,9 @@
                     <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                     My Profile
                 </a>
-                <a class="nav-link" href="../Layout/user_chat.php">
+                <a class="nav-link" href="../Layout/user_order.php">
                     <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                    Chat
+                    My Order
                 </a>
 
                 </a>
