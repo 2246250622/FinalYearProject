@@ -61,6 +61,11 @@
                     <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                     Buy the Point
                 </a>
+
+                <a class="nav-link" href="../Layout/user_chat.php">
+                    <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                    Forum
+                </a>
                
             </div>
         </div>

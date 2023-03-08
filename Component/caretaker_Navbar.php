@@ -63,6 +63,11 @@
                     Chat
                 </a>
                 
+                <a class="nav-link" href="../Layout/test.php">
+                    <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                    Test
+                </a>
+                
                
             </div>
         </div>
