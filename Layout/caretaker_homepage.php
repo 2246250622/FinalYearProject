@@ -37,28 +37,87 @@
     {
     ?>
 
-<br><br><br><br><br><br><br><br>
+<br><br><br><br><br>
 <main style="margin-left:320px;">
-    <h1>Welcome! <b><u>Mr/Ms <?php echo $row['LName']; ?></u></b></h1>
-    <p class="fs-5 col-md-8">“Too often we underestimate the power of a touch, a smile, a kind word, a listening ear, an honest compliment, or the smallest act of caring, all of which have the potential to turn a life around.” — <b>Leo Buscaglia, author</b> <br><b style="color:red;font-size:40px;"> Therefore, we are here for you.</b></p>
+<div class="container-fluid px-4">
+  <?php
+  $number = "SELECT * FROM question ";
+  $number_count = mysqli_num_rows(mysqli_query($conn, $number));
+  $ordernumber = "SELECT * FROM question where ID_Caretaker = '".$_SESSION['ID']."'";
+  $ordernumber_count = mysqli_num_rows(mysqli_query($conn, $ordernumber));
+  $pointsql = "SELECT Point FROM user WHERE Email= '".$_SESSION['Email']."'";
+  $point_count = mysqli_query($conn, $pointsql);
+  while ($point_count1 = mysqli_fetch_array($point_count)){
+    $point = $point_count1["Point"];}
+  ?>
+                        
+                        <div class="row">
+                        <div class="col-xl-3 col-md-6">
+                                <div class="card bg-warning text-white mb-4">
+                                    <div class="card-body">Your status:</div>
+                                    <center><h1><?php echo"Online"?></h1></center>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-6">
+                                <div class="card bg-primary text-white mb-4">
+                                    <div class="card-body">Number of market order:</div>
+                                    <center><h1><?php echo"$number_count"?></h1></center>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-6">
+                                <div class="card bg-success text-white mb-4">
+                                    <div class="card-body">Date:</div>
+                                    <center><h1 id="displayDateTime"></h1></center>
+                                </div>
+                            </div>
+                        </div>
+                       
+                       
+                    </div>
 
-
-    <hr class="col-3 col-md-2 mb-5">
-
-    <div class="row g-5">
-      <div class="col-md-6">
-        <ul class="icon-list">
-          <li class="text-muted">Searching caregiver profiles and limiting the results to specific requirements.</li>
-          <li class="text-muted">Posting Jobs with your care needs and requirements so interested caregivers can apply.</li>
-          <li class="text-muted">Send direct messages to potential candidates</li>
-          <li class="text-muted">Run additional background checks</li>
-          <li class="text-muted">Access recommendations from previous families</li>
-          <li class="text-muted">Pay caregivers you’ve hired securely</li>
-        </ul>
+<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel" style="margin-left:40px;width:70%"> 
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="2000" >
+      <img src="../img/caretaker_banner1.png"  class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block" style="color:#ff0000;">
+        <h3>Welcome! <b><u>Mr/Ms <?php echo $row['LName']; ?></u></b></h3>
+       
       </div>
-
-      
     </div>
+    <div class="carousel-item" data-bs-interval="2000">
+      <img src="../img/caretaker_banner2.png"  class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block" style="color:#00ffff;">
+
+        <p>“Too often we underestimate the power of a touch, a smile, a kind word, a listening ear, an honest compliment, or the smallest act of caring, all of which have the potential to turn a life around.” — <b>Leo Buscaglia, author</b></p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="../img/caretaker_banner3.png" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block" style="color:#f012be;">
+        <h3>Therefore, we are here for you.</h3>
+
+      </div>
+    </div>
+    
+  </div>
+  
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+
+
   </main>
 
 
@@ -150,6 +209,14 @@ $(document).ready(function() {
   
 });
 </script>
+
+                                    <script type="text/javascript">  
+                                    var today = new Date();
+                                    var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+                                    document.getElementById("displayDateTime").innerHTML = date;
+                                    </script>
+
+
 <!-- end of load data -->
 <!-- navbar js -->
 
