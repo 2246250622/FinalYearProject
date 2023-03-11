@@ -56,10 +56,12 @@ $ls = mysqli_query($conn, $sql);
                                             <th>Role</th>
                                             <th>Status</th>
                                             <th colspan='2'>Actions</th>
+                                            <th></th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
+                                        <th>ID</th>
                                         <th>Full Name</th>
                                             <th>Phone</th>
                                             <th>Email</th>
@@ -68,6 +70,7 @@ $ls = mysqli_query($conn, $sql);
                                             <th>Role</th>
                                             <th>Status</th>
                                             <th>Actions</th>
+                                            <th></th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
@@ -87,7 +90,6 @@ while ($row = mysqli_fetch_array($ls)){
     echo"<td>{$row["Status"]}</td>";
     echo"<td><a href='../Layout/admin_managementedit.php?id={$row["ID"]}' class='btn btn-success'>Edit</a></td>";
     echo"<td><form action='../Layout/admin_managementedithandle.php' method='POST'><button type='submit' name='delete_user' value='{$row["ID"]}' class='btn btn-danger'>Delete</button></form></td>";
-
 	echo "</tr>";
 }
 	

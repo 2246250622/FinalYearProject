@@ -63,9 +63,9 @@
                     Chat
                 </a>
                 
-                <a class="nav-link" href="../Layout/test.php">
+                <a class="nav-link" href="../Layout/caretaker_rating.php">
                     <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                    Test
+                    Rating
                 </a>
                 
                
