@@ -146,6 +146,16 @@ INSERT INTO `user` (`ID`, `FName`, `LName`, `Gender`, `DateofBirth`, `Phone`, `H
 -- 已傾印資料表的限制式
 --
 
+DROP TABLE IF EXISTS `rating`;
+CREATE TABLE IF NOT EXISTS `rating` (
+  `ID_Rating` int NOT NULL AUTO_INCREMENT,
+  `ID_User` varchar(20) DEFAULT NULL,
+  `ID_Caretaker` varchar(20) DEFAULT NULL,
+  `Rate` float DEFAULT NULL,
+  `Comment` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`ID_Rating`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
 --
 -- 資料表的限制式 `chat`
 --

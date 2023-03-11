@@ -34,11 +34,21 @@ if(isset($_POST['accept_order'])){
 
 }else if(isset($_POST['finish_order'])){
     $order_num = $_POST['finish_order'];
-    $status = 'Done';
+    $status = 'Awaiting rating';
     $query = "UPDATE question SET status='$status' where ID_Question='$order_num'";
     $query_run = mysqli_query($conn, $query);
 
     if($query_run){
+        $sql = "select * from question where ID_Question='$order_num'";
+        $ls = mysqli_query($conn, $sql);
+        while ($row = mysqli_fetch_array($ls)){
+            $ID_User = $row["ID"]; 
+            $ID_Caretaker = $row["ID_Caretaker"];  
+        }
+        $sql = "INSERT INTO rating VALUES(NULL,'$ID_User','$ID_Caretaker',NULL,NULL)";
+        mysqli_query($conn, $sql);
+
+
         $_SESSION['message']="The order number of $order_num is done";
         header('Location: ../Layout/caretaker_myjob.php');
         exit(0);

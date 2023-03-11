@@ -39,6 +39,7 @@
                   if ($error =="") {
                       $total = mysqli_num_rows($ls);
                   if ($total > 0){
+                    $sql = "INSERT INTO question VALUES(NULL,'$id','$type_of_care','$kind_of_help','$location','$who_need_care','$how_old','$describe',NULL,NULL,'Matching')";
                     echo "<script type='text/javascript'>alert('You already create an order before');</script>";
                    // $sql = "UPDATE question SET type_of_care='$type_of_care', kind_of_help='$kind_of_help', location='$location', who_need_care='$who_need_care', how_old='$how_old', describe='$describe',caretaker=NULL,status='Matching' WHERE ID ='$id'";
                 }else{

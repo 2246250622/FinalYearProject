@@ -74,10 +74,10 @@ if (isset($_POST['All'])) {
   $sql = "select * from question where ID_Caretaker = '$id'" ;
   $ls = mysqli_query($conn, $sql);
 } else if (isset($_POST['Unfinished'])) {
-  $sql = "select * from question where ID_Caretaker = '$id' and NOT status='Done'" ;
+  $sql = "select * from question where ID_Caretaker = '$id' and NOT status='Done' and  NOT status='Awaiting rating' ";
   $ls = mysqli_query($conn, $sql);
 } else if (isset($_POST['Finished'])) {
-  $sql = "select * from question where ID_Caretaker = '$id' and status='Done'" ;
+  $sql = "select * from question where ID_Caretaker = '$id' and status='Done' or status='Awaiting rating'";
   $ls = mysqli_query($conn, $sql);
 
   //...
@@ -116,8 +116,9 @@ if (isset($_POST['All'])) {
                     echo"<div class='d-flex justify-content-between align-items-center'>";
                     #<!-- Button trigger modal -->
                     echo"<button type='button' class='btn btn-primary' data-bs-toggle='modal' data-bs-target='#staticBackdrop'>Client Info</button>";
+                    if($row["status"]!='Done' AND $row["status"]!='Awaiting rating'){
                     echo"<form action='../Layout/caretaker_accepthandle.php' method='POST'><button type='submit' name='finish_order' value='{$row["ID_Question"]}' class='btn btn-secondary' data-bs-toggle='modal' data-bs-target='#exampleModal'>Finish Order</button></form>";
-                   
+                    }
                     echo" <small class='text-muted'>9 mins</small>";
                         echo"</div>";
                         echo"</div>";

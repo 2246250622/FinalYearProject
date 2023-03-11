@@ -51,6 +51,11 @@
                     My Order
                 </a>
 
+                <a class="nav-link" href="../Layout/user_rating.php">
+                    <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                    Rating
+                </a>
+
                 </a>
                 <a class="nav-link" href="../Layout/user_gift.php">
                     <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
@@ -66,6 +71,8 @@
                     <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                     Forum
                 </a>
+
+                
                
             </div>
         </div>
