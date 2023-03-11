@@ -32,9 +32,25 @@ if(isset($_POST['accept_order'])){
         exit(0);
     }
 
+}else if(isset($_POST['finish_order'])){
+    $order_num = $_POST['finish_order'];
+    $status = 'Done';
+    $query = "UPDATE question SET status='$status' where ID_Question='$order_num'";
+    $query_run = mysqli_query($conn, $query);
+
+    if($query_run){
+        $_SESSION['message']="The order number of $order_num is done";
+        header('Location: ../Layout/caretaker_myjob.php');
+        exit(0);
+    }else{
+        $_SESSION['message']="Something Wrong";
+        header('Location: ../Layout/caretaker_myjob.php');
+        exit(0);
+    }
+
+}else{
+    echo'Something Wrong!!';
 }
-
-
 
 
 ?>

@@ -27,6 +27,8 @@ $ls = mysqli_query($conn, $sql);
             </div>
                 <div id="layoutSidenav_content">
                 <main>
+                  <br>
+                <center><div style="width:90%;"> <?php include('../Layout/message.php')?> </div></center>
                 <section class="py-5 text-center container">
     <div class="row py-lg-5">
       <div class="col-lg-6 col-md-8 mx-auto">
@@ -38,13 +40,59 @@ $ls = mysqli_query($conn, $sql);
       </div>
     </div>
   </section>
-
+  
   <div class="album py-5 bg-light">
     <div class="container">
 
+    <form id="filterTable" name="filter" method="POST" action="<?php echo $_SERVER["PHP_SELF"] ?>">
+    <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+
+
+
+  <button type="submit" class="btn-check" name="All" id="All" autocomplete="off"></button>
+  <label class="btn btn-outline-primary" for="All"> All Orders </label>
+
+    <button type="submit" class="btn-check" name="Unfinished" id="Unfinished" autocomplete="off"></button>
+    <label class="btn btn-outline-primary" for="Unfinished">Unfinished Orders</label>
+
+    <button type="submit" class="btn-check" name="Finished" id="Finished" autocomplete="off"></button>
+    <label class="btn btn-outline-primary" for="Finished">Finished Orders</label>
+
+</form>
+
+
+
+
+</div><br><br><br>
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
 
                 <?php
+
+
+//order filter
+if (isset($_POST['All'])) {
+  $sql = "select * from question where ID_Caretaker = '$id'" ;
+  $ls = mysqli_query($conn, $sql);
+} else if (isset($_POST['Unfinished'])) {
+  $sql = "select * from question where ID_Caretaker = '$id' and NOT status='Done'" ;
+  $ls = mysqli_query($conn, $sql);
+} else if (isset($_POST['Finished'])) {
+  $sql = "select * from question where ID_Caretaker = '$id' and status='Done'" ;
+  $ls = mysqli_query($conn, $sql);
+
+  //...
+  //there are more 'else if' statements, but I've excluded them to maintain a clean question
+  //...
+
+} else {
+  $sql = "select * from question where ID_Caretaker = '$id'" ;
+  $ls = mysqli_query($conn, $sql);
+}
+
+
+
+
+
                 while ($row = mysqli_fetch_array($ls)){
                     echo"<div class='col'>";
                     echo"<div class='card shadow-sm'>";
@@ -68,8 +116,9 @@ $ls = mysqli_query($conn, $sql);
                     echo"<div class='d-flex justify-content-between align-items-center'>";
                     #<!-- Button trigger modal -->
                     echo"<button type='button' class='btn btn-primary' data-bs-toggle='modal' data-bs-target='#staticBackdrop'>Client Info</button>";
-                    echo"<button type='button' class='btn btn-secondary' data-bs-toggle='modal' data-bs-target='#exampleModal'>Finish Order</button>";
-                        echo" <small class='text-muted'>9 mins</small>";
+                    echo"<form action='../Layout/caretaker_accepthandle.php' method='POST'><button type='submit' name='finish_order' value='{$row["ID_Question"]}' class='btn btn-secondary' data-bs-toggle='modal' data-bs-target='#exampleModal'>Finish Order</button></form>";
+                   
+                    echo" <small class='text-muted'>9 mins</small>";
                         echo"</div>";
                         echo"</div>";
                         echo"</div>";
@@ -119,23 +168,6 @@ $ls = mysqli_query($conn, $sql);
                           
     
 
-                                        <?php
-
-while ($row = mysqli_fetch_array($ls)){
-	echo"<tr>";
-	echo"<td>{$row["ID_Question"]}</td>";
-	echo"<td>{$row["type_of_care"]}</td>";
-	echo"<td>{$row["kind_of_help"]}</td>";
-    echo"<td>{$row["location"]}</td>";
-    echo"<td>{$row["how_old"]}</td>";
-    echo"<td>{$row["describe"]}</td>";
-    echo"<td>{$row["caretaker"]}</td>";
-    echo"<td>{$row["status"]}</td>";
-    echo"<td><form action='../Layout/caretaker_accepthandle.php' method='POST'><button type='submit' name='accept_order' value='{$row["ID_Question"]}' class='btn btn-danger'>Accept Order</button></form></td>";
-	echo "</tr>";
-}
-	
-?>
 
 
                          
