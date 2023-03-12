@@ -226,16 +226,16 @@ $(document).ready(function() {
    
        <?php include('../Component/caretaker_Navbar.php');?>
             </div>
-            <div id="layoutSidenav_content">
+            
                 <main>
                 
                 </main>
-                <footer class="py-4 bg-light mt-auto">
+                <footer class="py-4 bg-light mt-auto" style="margin-left:320px;">
                     <div class="container-fluid px-4">
                         <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">Copyright &copy; CareHK 2022-2023</div>
+                         <div class="text-muted">Copyright &copy; CareHK 2022-2023</div>
                             
-                        </div>
+                        
                     </div>
                 </footer>
             </div>

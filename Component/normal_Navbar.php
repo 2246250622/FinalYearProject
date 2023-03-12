@@ -56,6 +56,11 @@
                     Rating
                 </a>
 
+                <a class="nav-link" href="../Layout/user_viewcomment.php">
+                    <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                    View Comment
+                </a>
+
                 </a>
                 <a class="nav-link" href="../Layout/user_gift.php">
                     <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>

@@ -133,16 +133,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
 <?php }}?>
 
 <button class="btn chatBtn chatToggle" id="chatToggle" style="background-color:#f44336;">Online Chat<i class="far fa-comment-alt" style="margin-left: 1rem"></i></button>
@@ -237,16 +227,16 @@ $(document).ready(function() {
    
        <?php include('../Component/normal_Navbar.php');?>
             </div>
-            <div id="layoutSidenav_content">
+            
                 <main>
                 
                 </main>
-                <footer class="py-4 bg-light mt-auto">
+                <footer class="py-4 bg-light mt-auto" style="margin-left:320px;">
                     <div class="container-fluid px-4">
                         <div class="d-flex align-items-center justify-content-between small">
                             <div class="text-muted">Copyright &copy; CareHK 2022-2023</div>
                             
-                        </div>
+                        
                     </div>
                 </footer>
             </div>
