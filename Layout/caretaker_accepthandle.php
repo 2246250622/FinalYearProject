@@ -42,10 +42,11 @@ if(isset($_POST['accept_order'])){
         $sql = "select * from question where ID_Question='$order_num'";
         $ls = mysqli_query($conn, $sql);
         while ($row = mysqli_fetch_array($ls)){
+            $ID_Question =  $row["ID_Question"];
             $ID_User = $row["ID"]; 
             $ID_Caretaker = $row["ID_Caretaker"];  
         }
-        $sql = "INSERT INTO rating VALUES(NULL,'$ID_User','$ID_Caretaker',NULL,NULL)";
+        $sql = "INSERT INTO rating VALUES(NULL,'$ID_Question' ,'$ID_User','$ID_Caretaker',NULL,NULL)";
         mysqli_query($conn, $sql);
 
 
@@ -58,6 +59,25 @@ if(isset($_POST['accept_order'])){
         exit(0);
     }
 
+}else if(isset($_POST['submit_comment'])){
+    $order_num = $_POST['submit_comment'];
+    $score = $_POST['score'];
+    $comment = $_POST['comment'];
+    $query = "UPDATE rating SET Rate='$score', Comment = '$comment' where ID_Question='$order_num'";
+    $query_run = mysqli_query($conn, $query);
+    
+    if($query_run){
+        $query = "UPDATE question SET status='Done' where ID_Question='$order_num'";
+        $query_run = mysqli_query($conn, $query);
+        $_SESSION['message']="The Comment is submitted. Thank you for your rating!";
+        header('Location: ../Layout/user_rating.php');
+        exit(0);
+    }else{
+        $_SESSION['message']="Something Wrong";
+        header('Location: ../Layout/user_rating.php');
+        exit(0);
+    }
+    
 }else{
     echo'Something Wrong!!';
 }

@@ -78,6 +78,10 @@
     <?php 
     session_start();
     require('../Layout/config.php');
+
+    $id = $_SESSION['ID'];
+    $sql = "select * from rating where ID_User = '$id' and Rate = 'NULL'" ;
+    $ls = mysqli_query($conn, $sql);
     ?>
 
 
@@ -93,28 +97,89 @@
             </div>
             <div id="layoutSidenav_content">
                 <main>
-
                 <div class="container py-4">
 
 
     <div class="p-5 mb-4 bg-light rounded-3">
       <div class="container-fluid py-5">
         <h1 class="display-5 fw-bold">Rating and Comment</h1>
-        <p class="col-md-8 fs-4">Using a series of utilities, you can create this jumbotron, just like the one in previous versions of Bootstrap. Check out the examples below for how you can remix and restyle it to your liking.</p>
+        <p class="col-md-8 fs-4">You can provide ratings (1-100) and positive or negative comments. The reviews and suggestions received from you will greatly help to improve the quality of service.<h6>**Click the button below to see what others have comment.**</h6></p>
         <button class="btn btn-primary btn-lg" type="button">View comments</button>
       </div>
     </div>
-
+    <center><div style="width:90%;"> <?php include('../Layout/message.php')?> </div></center>
     <div class="row align-items-md-stretch">
+   <?php while ($row = mysqli_fetch_array($ls)){
+      echo"<div class='col-md-6'>";
+      echo"<form action='../Layout/caretaker_accepthandle.php' method='POST'>";
+      echo"<div class='h-100 p-5 text-bg-dark rounded-3'>";
+      echo"<h2>Order ID: {$row["ID_Question"]}</h2>";
+      echo"<label for='score' class='form-label' id='rangeValue'>Rating</label> ";
+      echo"Score (1-100)<input type='range' class='form-range' min='0' max='100' step='1' id='score' name='score' oninput='rangeValue.innerText = this.value'>";
+      echo"<p>Comment Area</p>";
+      echo"<textarea id='comment' name='comment' rows='4' cols='64' placeholder='Input your comment here...'></textarea><br><br>";
+      echo"<button type='button' class='btn btn-primary' data-bs-toggle='modal' data-bs-target='#staticBackdrop'>Show Detail</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+      echo"<button type='submit' name='submit_comment' value='{$row["ID_Question"]}' class='btn btn-secondary' data-bs-toggle='modal' >Submit</button>";
+      echo"</form>";
+      echo"</div>";
+      echo"</div>";
 
-      <div class="col-md-6">
-        <div class="h-100 p-5 text-bg-dark rounded-3">
-          <h2>Change the background</h2>
-          <p>Swap the background-color utility and add a `.text-*` color utility to mix up the jumbotron look. Then, mix and match with additional component themes and more.</p>
-          <button class="btn btn-outline-light" type="button">Example button</button>
-        </div>
-      </div>
 
+                             #<!-- Modal -->
+                        echo"<div class='modal fade' id='staticBackdrop' data-bs-backdrop='static' data-bs-keyboard='false' tabindex='-1' aria-labelledby='staticBackdropLabel' aria-hidden='true'>";
+                        echo"<div class='modal-dialog'>";
+                        echo"<div class='modal-content'>";
+                        echo"<div class='modal-header'>";
+                        echo"<h5 class='modal-title' id='staticBackdropLabel'>Order {$row["ID_Question"]}</h5>";
+                        echo"<button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>";
+                        echo"</div>";
+                        echo"<div class='modal-body'>";
+
+                        $sql = "select * from question where ID_Question = {$row["ID_Question"]}" ;
+                        $list = mysqli_query($conn, $sql);
+
+                        
+
+                        while ($lists = mysqli_fetch_array($list)){
+
+                          $sqliii = "select * from user where ID = {$lists["ID_Caretaker"]}" ;
+                        $carelist = mysqli_query($conn, $sqliii);
+                        while ($carelists = mysqli_fetch_array($carelist)){
+                            $Date_of_birth = $carelists["DateofBirth"];
+                            $Gender = $carelists["Gender"];
+                            $Phone = $carelists["Phone"];
+                            $Email = $carelists["Email"];
+                        }
+
+                        echo"<fieldset><legend>Caretaker Detail</legend>";
+                        echo"Name of Caretaker&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:{$lists["caretaker"]}<br />";
+                        echo"Date of Birth of Caretaker&nbsp;&nbsp;&nbsp;:$Date_of_birth<br />";
+                        echo"Gender of Caretaker&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: $Gender<br />";
+                        echo"Phone of Caretaker&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:$Phone<br />";
+                        echo"Email of Caretaker&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:$Email<br />";
+                        
+    
+                        echo"</fieldset><br><br><br>";
+
+                            echo"<fieldset><legend>Order Detail</legend>";
+                            echo"Type of care&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:{$lists["type_of_care"]}<br />";
+                            echo"Kind of help&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:{$lists["kind_of_help"]}<br />";
+                            echo"Location&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:{$lists["location"]}<br />";
+                            echo"Age of target&nbsp;&nbsp;&nbsp;&nbsp;:{$lists["how_old"]}<br />";
+                            echo"Describe&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:{$lists["describe"]}<br />";
+                            echo"Status&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:{$lists["status"]}<br />";
+        
+                            echo"</fieldset>";
+                        }
+
+                                echo"</div>";
+                                echo"<div class='modal-footer'>";
+                                echo"<button type='button' class='btn btn-primary' data-bs-dismiss='modal'>Close</button>";
+                                echo"</div></div></div></div>";
+
+
+
+   }?>
       
     </div>
 

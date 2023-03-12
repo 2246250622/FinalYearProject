@@ -106,7 +106,7 @@ CREATE TABLE IF NOT EXISTS `question` (
 --
 
 INSERT INTO `question` (`ID_Question`, `ID`, `type_of_care`, `kind_of_help`, `location`, `who_need_care`, `how_old`, `describe`, `ID_Caretaker`, `caretaker`, `status`) VALUES
-(18, 1, 'In-home care', 'Personal care', 'Central and Western', 'Myself', '30-100’s', 'NA', 2, 'Mr/Ms Caretaker', 'Done');
+(18, 1, 'In-home care', 'Personal care', 'Central and Western', 'Myself', '30-100’s', 'NA', 2, 'Mr/Ms Caretaker', 'Awaiting rating');
 
 -- --------------------------------------------------------
 
@@ -149,6 +149,7 @@ INSERT INTO `user` (`ID`, `FName`, `LName`, `Gender`, `DateofBirth`, `Phone`, `H
 DROP TABLE IF EXISTS `rating`;
 CREATE TABLE IF NOT EXISTS `rating` (
   `ID_Rating` int NOT NULL AUTO_INCREMENT,
+  `ID_Question` int NOT NULL,
   `ID_User` varchar(20) DEFAULT NULL,
   `ID_Caretaker` varchar(20) DEFAULT NULL,
   `Rate` float DEFAULT NULL,
@@ -174,6 +175,11 @@ ALTER TABLE `conversation`
 ALTER TABLE `question`
   ADD CONSTRAINT `question_ibfk_1` FOREIGN KEY (`ID`) REFERENCES `user` (`ID`);
 COMMIT;
+
+ALTER TABLE `rating`
+  ADD CONSTRAINT `rating_ibfk_1` FOREIGN KEY (`ID_Question`) REFERENCES `question` (`ID_Question`);
+COMMIT;
+
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
