@@ -41,9 +41,9 @@
 <main style="margin-left:320px;">
 <div class="container-fluid px-4">
   <?php
-  $number = "SELECT * FROM question ";
+  $number = "SELECT * FROM question where status = 'Matching' ";
   $number_count = mysqli_num_rows(mysqli_query($conn, $number));
-  $ordernumber = "SELECT * FROM question where ID_Caretaker = '".$_SESSION['ID']."'";
+  $ordernumber = "SELECT * FROM question where  ID_Caretaker = '".$_SESSION['ID']."'";
   $ordernumber_count = mysqli_num_rows(mysqli_query($conn, $ordernumber));
   $pointsql = "SELECT Point FROM user WHERE Email= '".$_SESSION['Email']."'";
   $point_count = mysqli_query($conn, $pointsql);

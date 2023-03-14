@@ -80,7 +80,7 @@
     require('../Layout/config.php');
 
     $id = $_SESSION['ID'];
-    $sql = "select * from rating where ID_User = '$id' and Rate = 'NULL'" ;
+    $sql = "select * from rating where ID_User = '$id' and Rate IS NULL" ;
     $ls = mysqli_query($conn, $sql);
     ?>
 

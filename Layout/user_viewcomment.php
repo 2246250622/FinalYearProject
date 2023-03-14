@@ -29,7 +29,8 @@
     require('../Layout/config.php');
 
     $id = $_SESSION['ID'];
-    $sql = "select * from rating where ID_User = '$id' and Rate = 'NULL'" ;
+    $sql = "select * from user where Role = 'caretaker'" ;
+    #$sql = "select * from rating where ID_User = '$id' and Rate != 'NULL'" ;
     $ls = mysqli_query($conn, $sql);
     ?>
 
@@ -41,14 +42,45 @@
 
 
 
-
        <?php include('../Component/normal_Navbar.php');?>
             </div>
             <div id="layoutSidenav_content">
                 <main>
+                <div class="container py-4">
+
+                <div class="accordion" id="accordionPanelsStayOpenExample">
+
+                <?php while ($row = mysqli_fetch_array($ls)){
+                echo"<div class='accordion-item'>";
+                echo"<h2 class='accordion-header' id='panelsStayOpen-headingTwo'>";
+                echo"<button class='accordion-button collapsed' type='button' data-bs-toggle='collapse' data-bs-target='#panelsStayOpen-{$row["ID"]}' aria-expanded='false' aria-controls='panelsStayOpen-{$row["ID"]}'>";
+                echo"Mr/Ms {$row["LName"]} {$row["FName"]}";
+                echo"</button>";
+                echo"</h2>";
+                echo"<div id='panelsStayOpen-{$row["ID"]}' class='accordion-collapse collapse' aria-labelledby='panelsStayOpen-headingTwo'>";
+                echo"<div class='accordion-body'>";
+
+                $sqli = "select * from rating where ID_Caretaker = '{$row["ID"]}' and Rate != 'NULL'" ;
+                $list = mysqli_query($conn, $sqli);
+
+                while ($rows = mysqli_fetch_array($list)){ 
+
+                $sqliss = "select * from user where ID = '{$rows["ID_User"]}'" ;
+                $listss = mysqli_query($conn, $sqliss);    
+                while ($rowss = mysqli_fetch_array($listss)){ 
+                    echo"<strong>Reviewer:</strong> Mr/Ms {$rowss["LName"]} {$rowss["FName"]}({$rowss["Email"]})<br>";
+                 }
+                echo"<strong>Score:</strong> <span style='color:#FF0000;'>{$rows["Rate"]}</span><br><strong>Comment:</strong> <br>";
+                echo"<textarea disabled rows='4' cols='150'>{$rows["Comment"]}</textarea><br><br>";
+            
+            
+            }
+                echo"</div></div></div>";
+                } ?>
 
 
-                
+</div>
+</div>
                 </main>
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">
